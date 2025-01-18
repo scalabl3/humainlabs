@@ -4,44 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
-    <title>My Website</title>
+    <title>HumainLabs.ai - Human-AI Collaboration Lab</title>
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Adding modern CSS reset and fonts -->
+    <!-- Modern fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Add icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div class="noise-overlay"></div>
+    
     <header>
         <nav>
-            <h1>My Website</h1>
+            <div class="logo">
+                <span class="logo-text">Humain<span class="accent">Labs</span></span>
+            </div>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="cta-button">Connect</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home">
-            <h2>Welcome to My Site</h2>
-            <p>This is a clean, modern website template that you can easily customize.</p>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1>Advancing Human-AI<br>Collaboration</h1>
+                <p class="hero-text">Exploring the frontiers of human-AI synergy through innovative research and practical applications.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="primary-button">View Projects <i class="fas fa-arrow-right"></i></a>
+                    <a href="#about" class="secondary-button">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="gradient-sphere"></div>
+            </div>
         </section>
 
-        <section id="about">
-            <h2>About</h2>
-            <p>Add your content here.</p>
+        <section id="research" class="feature-section">
+            <h2>Research Areas</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Cognitive Systems</h3>
+                    <p>Developing AI systems that complement human cognitive processes.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Interactive AI</h3>
+                    <p>Creating natural and intuitive human-AI interfaces.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-network"></i>
+                    <h3>Neural Networks</h3>
+                    <p>Advancing the boundaries of machine learning architectures.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Collaborative Intelligence</h3>
+                    <p>Optimizing teamwork between humans and AI systems.</p>
+                </div>
+            </div>
         </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Get in touch with me at: your@email.com</p>
+        <section id="projects" class="projects-section">
+            <h2>Latest Projects</h2>
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-content">
+                        <h3>Project Alpha</h3>
+                        <p>Breakthrough in human-AI decision making processes.</p>
+                        <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-content">
+                        <h3>Project Beta</h3>
+                        <p>Natural language processing for enhanced collaboration.</p>
+                        <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2>About Us</h2>
+            <p class="lead-text">We're a research lab dedicated to advancing the field of human-AI collaboration through innovative research and practical applications.</p>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h3>Mission</h3>
+                    <p>To create meaningful advances in human-AI collaboration that benefit society.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Vision</h3>
+                    <p>A future where humans and AI systems work together seamlessly and ethically.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Connect With Us</h2>
+            <p class="contact-text">Interested in collaboration or learning more about our work?</p>
+            <a href="mailto:contact@humainlabs.ai" class="contact-button">
+                <i class="fas fa-envelope"></i> Get in Touch
+            </a>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Your Name</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <span class="logo-text">Humain<span class="accent">Labs</span></span>
+                <p>Advancing the future of human-AI collaboration</p>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 HumainLabs. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html> 
