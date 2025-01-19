@@ -116,6 +116,11 @@ function generateNavigation() {
         }
     });
     
+    // Add blank element for mobile spacing
+    const spacer = document.createElement('li');
+    spacer.style.height = '3rem';
+    ul.appendChild(spacer);
+    
     nav.appendChild(ul);
     return nav;
 }
