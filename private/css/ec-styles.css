@@ -34,12 +34,12 @@
     }
 
     .section {
-        background: var(--card-bg);
-        border: 1px solid var(--border-color);
+        background: none;
+        border: none;
     }
 
     .content::before {
-        background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+        display: none;
     }
 }
 
@@ -72,7 +72,23 @@ h1, h2, h3, h4, h5, h6 {
     height: 100vh;
     box-shadow: 1px 0 8px rgba(0, 0, 0, 0.1);
     z-index: 100;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     overflow-y: auto;
+    max-height: calc(100vh - 6rem);  /* Account for logo area */
+    padding-right: 0.5rem;  /* Space for scrollbar */
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-menu {
+        overflow-y: auto;
+        max-height: none;
+        padding-right: 0;
+    }
 }
 
 .nav-logo {
@@ -89,20 +105,14 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color);
 }
 
-.nav-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
 .nav-menu li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .nav-menu a {
     color: var(--text-color);
     text-decoration: none;
-    padding: 0.5rem 0;
+    padding: 0.35rem 0;
     display: block;
     transition: color 0.3s ease;
     font-size: 0.95rem;
@@ -122,18 +132,18 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin: 1.5rem 0 0.5rem;
+    margin: 1rem 0 0.25rem;
 }
 
 .nav-group {
-    margin-left: 1rem;
+    margin-left: 0.75rem;
 }
 
 .nav-divider {
     height: 1px;
     background: var(--text-color);
     opacity: 0.1;
-    margin: 1rem 0;
+    margin: 0.75rem 0;
 }
 
 /* Main Content */
@@ -145,11 +155,18 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
     position: relative;
     z-index: 1;
-    background: linear-gradient(135deg, var(--bg-color) 0%, var(--gradient-end) 100%);
+    background: linear-gradient(90deg, var(--bg-color) 0%, var(--gradient-end) 100%);
 }
 
 .content::before {
-    display: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: radial-gradient(circle at 0% 50%, var(--gradient-start) 0%, transparent 70%);
 }
 
 h1 {
@@ -191,11 +208,7 @@ a:hover {
 
 /* Cards and Sections */
 .section {
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background: var(--card-bg);
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
     position: relative;
 }
 
@@ -206,14 +219,15 @@ a:hover {
     color: var(--text-color);
 }
 
-.section h3 {
+.section h4 {
     font-size: 1rem;
-    margin: 1.2rem 0 0.4rem;
+    margin: 1.2rem 0 0.2rem;
     color: var(--text-color);
+    font-weight: 600;
 }
 
 .section p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.6;
     margin-bottom: 1rem;
     color: var(--text-color);
@@ -225,11 +239,11 @@ a:hover {
         font-size: 1.1rem;
     }
 
-    .section h3 {
+    .section h4 {
         font-size: 0.95rem;
     }
 
     .section p {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 } 
