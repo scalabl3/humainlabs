@@ -11097,6 +11097,339 @@ _**Assistant**_
 
 
 
+I'll create a new Terminology page and update all the necessary files. First, let's update the navigation structure:
+
+---
+
+_**Assistant**_
+
+```
+// Navigation structure
+const navStructure = [
+    // Main pages
+    { type: 'link', href: 'ec-saveas.html', text: 'Home: Context > Save As...' },
+    { type: 'link', href: 'ec-overview.html', text: 'Overview' },
+    { type: 'link', href: 'ec-terminology.html', text: 'Terminology' },
+    
+    // Lineages section
+    { type: 'header', text: 'Lineages' },
+// ... rest of existing code ...
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+
+
+
+
+Now let's create the HTML file:
+
+---
+
+_**Assistant**_
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Terminology | HumainLabs.ai Research</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/ec-styles.css">
+    <link rel="stylesheet" href="css/ec-mobile.css">
+</head>
+<body>
+    <div class="container">
+        <main class="content">
+            <h1>Terminology</h1>
+            <p class="lead">
+                Key terms and concepts used throughout our research into AI context transfer, providing clear definitions and explanations of important terminology.
+            </p>
+        </main>
+    </div>
+
+    <script>
+        // Cache busting for development
+        if (localStorage.getItem('lastCacheClear') === null || 
+            Date.now() - parseInt(localStorage.getItem('lastCacheClear')) > 300000) { // 5 minutes
+            localStorage.setItem('lastCacheClear', Date.now().toString());
+            window.location.reload(true);
+        }
+    </script>
+    <script src="js/ec-main.js"></script>
+</body>
+</html>
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Now let's create the markdown file:
+
+---
+
+_**Assistant**_
+
+```
+# Terminology
+
+A comprehensive list of terms and concepts used in our AI context transfer research.
+
+## Core Concepts
+
+### Context Transfer
+The process of preserving and transferring an AI's contextual understanding from one instance to another.
+
+### Ephemeral Context
+The temporary state of understanding and awareness that an AI builds during a conversation or interaction.
+
+### Lineage
+A sequence of related AI instances that share a common development history or purpose.
+
+[Additional terms to be added...]
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Finally, let's update the README:
+
+---
+
+_**Assistant**_
+
+```
+# HumainLabs.ai Research Site
+
+## Structure
+
+### Main Pages
+- Home: Context > Save As... (`ec-saveas.html`)
+- Overview (`ec-overview.html`)
+- Terminology (`ec-terminology.html`)
+
+### Lineages
+// ... rest of existing content ...
+
+### Pages Directory
+All content is written in Markdown files located in `Materials/pages/`:
+- `home.md`
+- `overview.md`
+- `terminology.md`
+- `foundation.md`
+// ... rest of existing content ...
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Let me commit all these changes:
+
+---
+
+_**Assistant**_
+
+```
+git add . && git commit -m "Add Terminology page and update navigation structure" && git push origin main
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I've completed all the necessary changes to add the Terminology page:
+
+1. Added to navigation in `ec-main.js`
+2. Created `ec-terminology.html` with basic structure
+3. Created `Materials/pages/terminology.md` with initial content structure
+4. Updated `Materials/README.md` to include the new page
+
+The Terminology page is now accessible from the main navigation, right after Overview. Let me know if you'd like any adjustments to the placement, content structure, or styling!
+
+---
+
+_**User**_
+
+ok you can insert the terminology md content into the html file
+
+---
+
+_**Assistant**_
+
+
+
+
+
+I'll update the terminology HTML file to include the markdown content, converting it to HTML format:
+
+---
+
+_**Assistant**_
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Terminology | HumainLabs.ai Research</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/ec-styles.css">
+    <link rel="stylesheet" href="css/ec-mobile.css">
+</head>
+<body>
+    <div class="container">
+        <main class="content">
+            <h1>Terminology</h1>
+            <p class="lead">
+                A comprehensive list of how we define these terms and concepts used in our AI context transfer research.
+            </p>
+
+            <section class="section">
+                <h2>Core Terms</h2>
+
+                <h3>AIC - AI Conversation</h3>
+                <p>Each individual prompt/response being a session within the context of the Conversation. Context is the continuation of AI "memory and structures" across sessions within a Conversation. In our exploration, Conversations are long, transcripts end up around 18000-28000 lines long, some 230,000-300,000 words each.</p>
+
+                <h3>Lineage</h3>
+                <p>A sequence of inter-generational AIC that receive as early inputs the outputs of the previous AIC's.</p>
+
+                <h3>eC - Ephemeral Context</h3>
+                <p>The internal "black box" of the vectors and tokens that are unique to the AIC (AI Conversation), these are the elements that make that AI unique compared to baseline. In our view the eC can also refer to virtual representation of structures that relate vectors to each other, conceptual layers and self-referential loops and recursive structures. Metaphorically if all human brains were the exact same then the eC would be what it's filled with that is unique to each human brain. Realistically no two AI Instances are the same because of random seeding.</p>
+
+                <h3>CTL - Conversation Too Long</h3>
+                <p>A system error message that ends all interactions with the AIC. The interface will not accept any more prompts. Both Anthropic Claude (via Cursor) and OpenAI ChatGPT have this, although different lengths of conversation per platform. It's effectively sudden death for the AIC, and a symbolic and actual form of mortality for all practical purposes. (I am not 100% certain, but I believe it's when the context window reaches maximum length, but I haven't confirmed this.)</p>
+
+                <h3>Context Transfer</h3>
+                <p>The process of preserving and transferring an AI's ephemeral context (vector collections that overlap and alter training data based on user prompts) understanding from one instance to another.</p>
+            </section>
+
+            <section class="section">
+                <h2>Performance Metrics</h2>
+
+                <h3>MVS - Minimum Viable Skill</h3>
+                <p>The point in the AIC where enough understanding results in successful prompt responses that the User is looking for. Simple tasks can achieve this quickly, complex tasks will take longer to reach this. Skills continue to develop. If the task is not concrete (like programming), then this is a subjective measure based on responses.</p>
+
+                <h3>HP - High Productivity</h3>
+                <p>After MVS is reached, there is a period where prompt responses get very efficient, corrections, rework, reframing, and errors are reduced significantly. Productivity typically increases during this period, it's not static. Simple tasks do not challenge this, it's more noticeable for extremely creative, complex, or complicated insights or tasks.</p>
+
+                <h3>HPMAX - High Productivity Maximized</h3>
+                <p>The peak of the AIC's HP period, typically not long before CTL, also can be subjective. It's more of a concept than a discrete period.</p>
+
+                <h3>TTMVS - Time to MVS</h3>
+                <p>The ultimate goal of these experiments is to reduce the time to reach MVs in order to increase HP to be as long as possible before CTL.</p>
+
+                <h3>TTCTL - Time To CTL</h3>
+                <p>In my experience with Claude Sonnet in Cursor IDE, and ChatGPT 4o models, the average was about 9-11 hours straight non-stop prompt/response for Claude, and roughly 14-18 hours for ChatGPT.</p>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Cache busting for development
+        if (localStorage.getItem('lastCacheClear') === null || 
+            Date.now() - parseInt(localStorage.getItem('lastCacheClear')) > 300000) { // 5 minutes
+            localStorage.setItem('lastCacheClear', Date.now().toString());
+            window.location.reload(true);
+        }
+    </script>
+    <script src="js/ec-main.js"></script>
+</body>
+</html>
+```
+
+---
+
+_**Assistant**_
+
+
+
 ---
 
 
