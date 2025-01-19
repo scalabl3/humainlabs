@@ -9,8 +9,8 @@ const navStructure = [
     { type: 'header', text: 'eC Development' },
     { type: 'group', items: [
         { href: 'ec-human-learning.html', text: 'Human Learning' },
-        { href: 'ec-learning-paradigms.html', text: 'Learning Paradigms' },
-        { href: 'ec-learning-strategies.html', text: 'Learning Strategies' }
+        { href: 'ec-learning-strategies.html', text: 'Learning Strategies' },
+        { href: 'ec-learning-paradigms.html', text: 'Learning Paradigms' }
     ]},
     
     // Lineages section
