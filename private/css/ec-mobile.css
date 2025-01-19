@@ -6,6 +6,8 @@
     height: 14px;
     padding: 0;
     margin: 0;
+    position: relative;
+    top: 1px; /* Slight adjustment to align with logo */
 }
 
 .hamburger span {
@@ -31,8 +33,9 @@
         z-index: 1000;
         display: flex;
         align-items: center;
-        background: var(--nav-bg);
+        background: var(--bg-color);
         gap: 0.75rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
 
     .nav-logo {
@@ -60,9 +63,8 @@
         position: absolute;
         top: 100%;
         left: 0;
-        background: var(--nav-bg);
+        background: var(--bg-color);
         padding: 1rem;
-        backdrop-filter: blur(10px);
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 
