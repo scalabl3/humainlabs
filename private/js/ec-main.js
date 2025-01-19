@@ -23,7 +23,7 @@ const navStructure = [
     { type: 'divider' },
     { type: 'header', text: 'About' },
     { type: 'group', items: [
-        { href: 'ec-interpretability.html', text: 'Interpretability: Why I Fit' },
+        { href: 'ec-interpretability.html', text: 'Do I Fit?' },
         { href: 'ec-resume.html', text: 'Resume' },
         { href: 'ec-about.html', text: 'Fun Facts' }
     ]}
