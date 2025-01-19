@@ -16,7 +16,10 @@ const navStructure = [
     { type: 'header', text: 'Research' },
     { type: 'group', items: [
         { href: 'ec-artifacts.html', text: 'AI Generated Artifacts' },
-        { href: 'ec-methods.html', text: 'Context Development' }
+        { href: 'ec-methods.html', text: 'Context Development' },
+        { href: 'ec-successes.html', text: 'Notable Successes' },
+        { href: 'ec-failures.html', text: 'Notable Failures' },
+        { href: 'ec-humanlike.html', text: 'Humanlike Observations' }
     ]},
     
     // Personal section
