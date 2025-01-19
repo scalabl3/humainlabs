@@ -10287,7 +10287,239 @@ I'll add no-cache meta tags and some JavaScript to help prevent caching during d
 _**Assistant**_
 
 ```
-undefined
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>AI: Context > Save As... | HumainLabs.ai Research</title>
+    // ... existing code ...
+</head>
+<body>
+    // ... existing content ...
+    <script>
+        // Cache busting for development
+        if (localStorage.getItem('lastCacheClear') === null || 
+            Date.now() - parseInt(localStorage.getItem('lastCacheClear')) > 300000) { // 5 minutes
+            localStorage.setItem('lastCacheClear', Date.now().toString());
+            window.location.reload(true);
+        }
+    </script>
+    <script src="js/ec-main.js"></script>
+</body>
+</html>
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+Let's also add a cache-busting parameter to our CSS file references:
+
+---
+
+_**Assistant**_
+
+```
+// ... existing code ...
+
+// Add cache busting for development
+function addCacheBuster() {
+    const timestamp = new Date().getTime();
+    document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+        link.href = link.href.split('?')[0] + '?v=' + timestamp;
+    });
+}
+
+// Call it when the page loads
+document.addEventListener('DOMContentLoaded', addCacheBuster);
+
+// ... rest of existing code ...
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+
+
+
+
+Let me commit these changes:
+
+---
+
+_**Assistant**_
+
+```
+git add . && git commit -m "Add cache-busting for development" && git push origin main
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+
+
+
+
+I've added three layers of cache prevention:
+
+1. Meta tags in the HTML:
+   ```html
+   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+   <meta http-equiv="Pragma" content="no-cache">
+   <meta http-equiv="Expires" content="0">
+   ```
+
+2. A cache-busting script that forces a reload every 5 minutes:
+   ```javascript
+   if (localStorage.getItem('lastCacheClear') === null || 
+       Date.now() - parseInt(localStorage.getItem('lastCacheClear')) > 300000) {
+       localStorage.setItem('lastCacheClear', Date.now().toString());
+       window.location.reload(true);
+   }
+   ```
+
+3. Dynamic cache-busting for CSS files by appending a timestamp parameter:
+   ```javascript
+   function addCacheBuster() {
+       const timestamp = new Date().getTime();
+       document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+           link.href = link.href.split('?')[0] + '?v=' + timestamp;
+       });
+   }
+   ```
+
+This should help prevent caching issues during development. Let me know if you'd like me to apply these changes to all pages or if you need any adjustments!
+
+---
+
+_**User**_
+
+so on chrome and safari mobile, the menu isn't scrolling but on brave it is... not sure why
+
+---
+
+_**Assistant**_
+
+
+
+Let me modify the mobile menu styles to ensure scrolling works across all mobile browsers. The issue might be related to how different browsers handle overflow and viewport heights. I'll add some additional CSS properties to force scrolling:
+
+---
+
+_**Assistant**_
+
+```
+// ... existing code ...
+@media screen and (max-width: 1024px) {
+    // ... existing code ...
+    .nav-menu {
+        display: none;
+        width: 100%;
+        position: fixed;
+        top: var(--header-height, 60px);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--bg-color);
+        padding: 0.75rem;
+        height: calc(100vh - var(--header-height, 60px));
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.active {
+        display: block;
+        animation: slideDown 0.3s ease forwards;
+        overscroll-behavior: contain;
+    }
+    // ... existing code ...
+}
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+
+
+
+
+Let me also add the header height variable to ensure consistent spacing:
+
+---
+
+_**Assistant**_
+
+```
+/* Base styles matching main site */
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #4f46e5;
+    --text-color: #1f2937;
+    --bg-color: #ffffff;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --gradient-start: rgba(99, 102, 241, 0.1);
+    --gradient-end: rgba(79, 70, 229, 0.1);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --header-height: 60px;
+}
+// ... existing code ...
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+
+
+
+
+Let me commit these changes:
+
+---
+
+_**Assistant**_
+
+```
+git add . && git commit -m "Improve mobile menu scrolling across browsers" && git push origin main
 ```
 
 ---
