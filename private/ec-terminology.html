@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Terminology | HumainLabs.ai Research</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/ec-styles.css">
+    <link rel="stylesheet" href="css/ec-mobile.css">
+</head>
+<body>
+    <div class="container">
+        <main class="content">
+            <h1>Terminology</h1>
+            <p class="lead">
+                Key terms and concepts used throughout our research into AI context transfer, providing clear definitions and explanations of important terminology.
+            </p>
+        </main>
+    </div>
+
+    <script>
+        // Cache busting for development
+        if (localStorage.getItem('lastCacheClear') === null || 
+            Date.now() - parseInt(localStorage.getItem('lastCacheClear')) > 300000) { // 5 minutes
+            localStorage.setItem('lastCacheClear', Date.now().toString());
+            window.location.reload(true);
+        }
+    </script>
+    <script src="js/ec-main.js"></script>
+</body>
+</html> 

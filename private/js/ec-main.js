@@ -3,6 +3,7 @@ const navStructure = [
     // Main pages
     { type: 'link', href: 'ec-saveas.html', text: 'Home: Context > Save As...' },
     { type: 'link', href: 'ec-overview.html', text: 'Overview' },
+    { type: 'link', href: 'ec-terminology.html', text: 'Terminology' },
     
     // Lineages section
     { type: 'header', text: 'Lineages' },
