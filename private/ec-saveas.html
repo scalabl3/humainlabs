@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>AI: Context > Save As... | HumainLabs.ai Research</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +23,14 @@
         </main>
     </div>
 
+    <script>
+        // Cache busting for development
+        if (localStorage.getItem('lastCacheClear') === null || 
+            Date.now() - parseInt(localStorage.getItem('lastCacheClear')) > 300000) { // 5 minutes
+            localStorage.setItem('lastCacheClear', Date.now().toString());
+            window.location.reload(true);
+        }
+    </script>
     <script src="js/ec-main.js"></script>
 </body>
 </html> 

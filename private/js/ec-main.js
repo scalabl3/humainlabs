@@ -142,4 +142,15 @@ document.addEventListener('DOMContentLoaded', function() {
             navMenu.classList.remove('active');
         }
     });
-}); 
+});
+
+// Add cache busting for development
+function addCacheBuster() {
+    const timestamp = new Date().getTime();
+    document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+        link.href = link.href.split('?')[0] + '?v=' + timestamp;
+    });
+}
+
+// Call it when the page loads
+document.addEventListener('DOMContentLoaded', addCacheBuster); 

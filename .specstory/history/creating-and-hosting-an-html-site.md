@@ -10174,6 +10174,119 @@ I'll adjust the mobile menu spacing and font sizes to make it more compact and s
 _**Assistant**_
 
 ```
+// ... existing code ...
+@media screen and (max-width: 1024px) {
+    // ... existing code ...
+    .nav-menu {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--bg-color);
+        padding: 0.75rem;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu li {
+        margin-bottom: 0.25rem;
+    }
+
+    .nav-menu a {
+        font-size: 0.9rem;
+        padding: 0.35rem 0;
+    }
+
+    .nav-header {
+        font-size: 0.75rem;
+        margin: 1rem 0 0.25rem;
+    }
+
+    .nav-group {
+        margin-left: 0.75rem;
+    }
+
+    .nav-divider {
+        margin: 0.75rem 0;
+    }
+}
+// ... existing code ...
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+Let me commit these changes:
+
+---
+
+_**Assistant**_
+
+```
+git add . && git commit -m "Make mobile menu more compact and scrollable" && git push origin main
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+
+
+
+
+I've made the following changes to make the mobile menu more usable:
+
+1. Made the menu scrollable:
+   - Added `max-height: calc(100vh - 80px)`
+   - Added `overflow-y: auto`
+
+2. Reduced spacing:
+   - Menu padding: 1rem → 0.75rem
+   - List item margin: 0.25rem (was default)
+   - Nav group margin: 0.75rem (was 1rem)
+   - Divider margin: 0.75rem (was 1rem)
+
+3. Smaller fonts:
+   - Menu items: 0.9rem (was 0.95rem)
+   - Headers: 0.75rem (was 0.8rem)
+   - Reduced padding on menu items to 0.35rem
+
+The menu should now be more compact and scrollable on mobile. Let me know if you'd like any adjustments to these values!
+
+---
+
+_**User**_
+
+can you add some no-cache content for now and some expiration code via javacsript so that i can test more easily? it's caching the content on mobile lol
+
+---
+
+_**Assistant**_
+
+
+
+I'll add no-cache meta tags and some JavaScript to help prevent caching during development. First, let's add the meta tags to all pages. I'll start with one file and then we can apply it to all:
+
+---
+
+_**Assistant**_
+
+```
 undefined
 ```
 
