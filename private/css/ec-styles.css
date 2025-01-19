@@ -19,8 +19,8 @@
         --bg-color: #111827;
         --nav-bg: rgba(17, 24, 39, 0.8);
         --card-bg: rgba(31, 41, 55, 0.9);
-        --gradient-start: rgba(129, 140, 248, 0.03);
-        --gradient-end: rgba(99, 102, 241, 0.03);
+        --gradient-start: rgba(129, 140, 248, 0.05);
+        --gradient-end: rgba(99, 102, 241, 0.05);
         --border-color: rgba(255, 255, 255, 0.1);
     }
 
@@ -142,26 +142,11 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
     position: relative;
     z-index: 1;
-    background-image: 
-        radial-gradient(circle at 20% 30%, var(--gradient-start) 0%, transparent 20%),
-        radial-gradient(circle at 80% 70%, var(--gradient-end) 0%, transparent 20%),
-        linear-gradient(45deg, var(--gradient-start) 0%, transparent 30%),
-        linear-gradient(-45deg, var(--gradient-end) 0%, transparent 30%);
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(135deg, var(--bg-color) 0%, var(--gradient-end) 100%);
 }
 
 .content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
-    pointer-events: none;
+    display: none;
 }
 
 h1 {
