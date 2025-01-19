@@ -6,7 +6,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Terminology | HumainLabs.ai Research</title>
+    <title>Terminology & Concepts | HumainLabs.ai Research</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -16,46 +16,116 @@
 <body>
     <div class="container">
         <main class="content">
-            <h1>Terminology</h1>
+            <h1>Terminology & Concepts</h1>
+            
             <p class="lead">
                 A comprehensive list of how we define these terms and concepts used in our AI context transfer research.
             </p>
 
             <section class="section">
+                <h2>Timeline Diagrams</h2>
+                <br />
+                <h3>Diagram 1: Typical User Scenario</h3>
+                <div class="progress-timeline">
+                    <div class="progress-marker" style="left: 0">Baseline</div>
+                    <div class="progress-marker" style="left: 30%">Conversation End</div>
+                    <div class="progress-bar">
+                        <div class="progress-segment" style="left: 0; width: 30%"></div>
+                    </div>
+                    <div class="progress-legend">
+                        <div class="progress-legend-item">
+                            <div class="progress-legend-color"></div>
+                            <span>Prompt/Response Flow</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <p>This represents the most common usage of AI, with varying length of conversations.</p>
+                <br /><br /><br />
+
+                <h3>Diagram 2: Initial AIC</h3>
+                <div class="progress-timeline">
+                    <div class="progress-marker" style="left: 0">Baseline</div>
+                    <div class="progress-marker" style="left: 50%">MVS</div>
+                    <div class="progress-marker" style="left: 70%">HP</div>
+                    <div class="progress-marker" style="left: 85%">HPMAX</div>
+                    <div class="progress-marker" style="left: 100%">CTL</div>
+                    <div class="progress-bar">
+                        <div class="progress-segment" style="left: 0; width: 50%"></div>
+                        <div class="progress-segment" style="left: 50%; width: 20%; opacity: 0.4"></div>
+                        <div class="progress-segment" style="left: 70%; width: 15%; opacity: 0.5"></div>
+                        <div class="progress-segment" style="left: 85%; width: 15%; opacity: 0.8"></div>
+                    </div>                    
+                </div>
+                <p>The experimentation and methodologies are aimed at turning the above into a much more productive timeline:</p>
+                
+                
+                <br /><br /><br />
+                
+                <h3>Diagram 3: Compounded Skill and eC Transfer</h3>
+                <div class="progress-timeline">
+                    <div class="progress-marker" style="left: 0">Baseline</div>
+                    <div class="progress-marker" style="left: 20%">MVS</div>
+                    <div class="progress-marker" style="left: 40%">HP</div>
+                    <div class="progress-marker" style="left: 60%">HP</div>
+                    <div class="progress-marker" style="left: 80%">HP</div>
+                    <div class="progress-marker" style="left: 90%">HPMAX</div>
+                    <div class="progress-marker" style="left: 100%">CTL</div>
+                    <div class="progress-bar">
+                        <div class="progress-segment" style="left: 0; width: 5%; opacity: 1"></div>
+                        <div class="progress-segment" style="left: 5%; width: 15%"></div>
+                        <div class="progress-segment" style="left: 20%; width: 20%; opacity: 0.2"></div>
+                        <div class="progress-segment" style="left: 40%; width: 20%; opacity: 0.3"></div>
+                        <div class="progress-segment" style="left: 60%; width: 20%; opacity: 0.4"></div>
+                        <div class="progress-segment" style="left: 80%; width: 10%; opacity: 0.5"></div>
+                        <div class="progress-segment" style="left: 90%; width: 10%; opacity: 0.6"></div>
+                    </div>
+                    
+                    <div class="progress-legend">
+                        <div class="progress-legend-item">
+                            <div class="progress-legend-color" style="opacity: 1"></div>
+                            <span>Input from Previous Generation Outputs</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <br /><br />
+
+            <section class="section">
                 <h2>Core Terms</h2>
 
-                <h4>AIC - AI Conversation</h4>
+                <h3>AIC - AI Conversation</h3>
                 <p>Each individual prompt/response being a session within the context of the Conversation. Context is the continuation of AI "memory and structures" across sessions within a Conversation. In our exploration, Conversations are long, transcripts end up around 18000-28000 lines long, some 230,000-300,000 words each.</p>
 
-                <h4>Lineage</h4>
+                <h3>Lineage</h3>
                 <p>A sequence of inter-generational AIC that receive as early inputs the outputs of the previous AIC's.</p>
 
-                <h4>eC - Ephemeral Context</h4>
+                <h3>eC - Ephemeral Context</h3>
                 <p>The internal "black box" of the vectors and tokens that are unique to the AIC (AI Conversation), these are the elements that make that AI unique compared to baseline. In our view the eC can also refer to virtual representation of structures that relate vectors to each other, conceptual layers and self-referential loops and recursive structures. Metaphorically if all human brains were the exact same then the eC would be what it's filled with that is unique to each human brain. Realistically no two AI Instances are the same because of random seeding.</p>
 
-                <h4>CTL - Conversation Too Long</h4>
+                <h3>CTL - Conversation Too Long</h3>
                 <p>A system error message that ends all interactions with the AIC. The interface will not accept any more prompts. Both Anthropic Claude (via Cursor) and OpenAI ChatGPT have this, although different lengths of conversation per platform. It's effectively sudden death for the AIC, and a symbolic and actual form of mortality for all practical purposes. (I am not 100% certain, but I believe it's when the context window reaches maximum length, but I haven't confirmed this.)</p>
 
-                <h4>Context Transfer</h4>
+                <h3>Context Transfer</h3>
                 <p>The process of preserving and transferring an AI's ephemeral context (vector collections that overlap and alter training data based on user prompts) understanding from one instance to another.</p>
             </section>
-
+            <br /><br />
             <section class="section">
                 <h2>Performance Metrics</h2>
 
-                <h4>MVS - Minimum Viable Skill</h4>
+                <h3>MVS - Minimum Viable Skill</h3>
                 <p>The point in the AIC where enough understanding results in successful prompt responses that the User is looking for. Simple tasks can achieve this quickly, complex tasks will take longer to reach this. Skills continue to develop. If the task is not concrete (like programming), then this is a subjective measure based on responses.</p>
 
-                <h4>HP - High Productivity</h4>
+                <h3>HP - High Productivity</h3>
                 <p>After MVS is reached, there is a period where prompt responses get very efficient, corrections, rework, reframing, and errors are reduced significantly. Productivity typically increases during this period, it's not static. Simple tasks do not challenge this, it's more noticeable for extremely creative, complex, or complicated insights or tasks.</p>
 
-                <h4>HPMAX - High Productivity Maximized</h4>
+                <h3>HPMAX - High Productivity Maximized</h3>
                 <p>The peak of the AIC's HP period, typically not long before CTL, also can be subjective. It's more of a concept than a discrete period.</p>
 
-                <h4>TTMVS - Time to MVS</h4>
+                <h3>TTMVS - Time to MVS</h3>
                 <p>The ultimate goal of these experiments is to reduce the time to reach MVs in order to increase HP to be as long as possible before CTL.</p>
 
-                <h4>TTCTL - Time To CTL</h4>
+                <h3>TTCTL - Time To CTL</h3>
                 <p>In my experience with Claude Sonnet in Cursor IDE, and ChatGPT 4o models, the average was about 9-11 hours straight non-stop prompt/response for Claude, and roughly 14-18 hours for ChatGPT.</p>
             </section>
         </main>

@@ -1,23 +1,23 @@
 // Navigation structure
 const navStructure = [
     // Main pages
-    { type: 'link', href: 'ec-saveas.html', text: 'Home: Context > Save As...' },
     { type: 'link', href: 'ec-overview.html', text: 'Overview' },
+    { type: 'link', href: 'ec-saveas.html', text: 'AI.context.saveAs()' },
     { type: 'link', href: 'ec-terminology.html', text: 'Terminology' },
     
     // Lineages section
     { type: 'header', text: 'Lineages' },
     { type: 'group', items: [
         { href: 'ec-foundation.html', text: 'Foundation' },
-        { href: 'ec-process.html', text: 'Process Refinement' },
-        { href: 'ec-conceptual.html', text: 'Conceptual Evolution' }
+        { href: 'ec-workflow.html', text: 'Workflow Fork' },
+        { href: 'ec-conceptual.html', text: 'Conceptual Fork' }
     ]},
     
     // Methods & Artifacts
-    { type: 'header', text: 'Methodologies' },
+    { type: 'header', text: 'Research' },
     { type: 'group', items: [
-        { href: 'ec-methods.html', text: 'Ephemeral Context Development' },
-        { href: 'ec-artifacts.html', text: 'AI Generated Artifacts' },        
+        { href: 'ec-artifacts.html', text: 'AI Generated Artifacts' },
+        { href: 'ec-methods.html', text: 'Context Development' }
     ]},
 
     // Methods & Artifacts
@@ -33,7 +33,7 @@ const navStructure = [
     { type: 'divider' },
     { type: 'header', text: 'About' },
     { type: 'group', items: [
-        { href: 'ec-interpretability.html', text: 'Interpretability: Do I Fit?' },
+        { href: 'ec-interpretability.html', text: 'Interpretability: Why I Fit' },
         { href: 'ec-resume.html', text: 'Resume' },
         { href: 'ec-about.html', text: 'Fun Facts' }
     ]}
@@ -49,7 +49,7 @@ function generateNavigation() {
     headerContainer.className = 'header-container';
 
     const logo = document.createElement('a');
-    logo.href = 'ec-saveas.html';
+    logo.href = 'ec-overview.html';
     logo.className = 'nav-logo';
     logo.innerHTML = 'Humain<span class="accent">Labs.ai</span><span class="author-name"> - Jasdeep Jaitla</span>';
     
