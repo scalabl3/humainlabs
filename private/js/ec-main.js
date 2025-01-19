@@ -38,7 +38,7 @@ function generateNavigation() {
     const logo = document.createElement('a');
     logo.href = 'ec-saveas.html';
     logo.className = 'nav-logo';
-    logo.innerHTML = 'Humain<span class="accent">Labs.ai</span> - Jasdeep Jaitla';
+    logo.innerHTML = 'Humain<span class="accent">Labs.ai</span><span class="author-name"> - Jasdeep Jaitla</span>';
     nav.appendChild(logo);
 
     // Add hamburger menu
