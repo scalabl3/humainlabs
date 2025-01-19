@@ -176,6 +176,10 @@ function generatePageNavigation() {
             gap: 0.5rem;
             text-decoration: none;
             color: var(--text-color);
+            opacity: 0.75;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: opacity 0.2s ease;
         `;
         prevLink.innerHTML = `
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -183,6 +187,8 @@ function generatePageNavigation() {
             </svg>
             <span>${prevItem.text}</span>
         `;
+        prevLink.addEventListener('mouseenter', () => prevLink.style.opacity = '1');
+        prevLink.addEventListener('mouseleave', () => prevLink.style.opacity = '0.75');
         pageNav.appendChild(prevLink);
     } else {
         // Empty div for spacing
@@ -200,7 +206,10 @@ function generatePageNavigation() {
             align-items: center;
             gap: 0.5rem;
             text-decoration: none;
-            color: var(--text-color);
+            color: var(--primary-color);
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: color 0.2s ease;
         `;
         nextLink.innerHTML = `
             <span>${nextItem.text}</span>
@@ -208,6 +217,8 @@ function generatePageNavigation() {
                 <path d="M9 18l6-6-6-6"/>
             </svg>
         `;
+        nextLink.addEventListener('mouseenter', () => nextLink.style.color = 'var(--secondary-color)');
+        nextLink.addEventListener('mouseleave', () => nextLink.style.color = 'var(--primary-color)');
         pageNav.appendChild(nextLink);
     }
 
