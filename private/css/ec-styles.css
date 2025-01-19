@@ -1,0 +1,170 @@
+/* Base styles matching main site */
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #4f46e5;
+    --text-color: #1f2937;
+    --bg-color: #ffffff;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --gradient-start: rgba(99, 102, 241, 0.1);
+    --gradient-end: rgba(79, 70, 229, 0.1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    line-height: 1.6;
+    background: var(--bg-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Left Navigation */
+.left-nav {
+    width: 280px;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    position: fixed;
+    height: 100vh;
+    box-shadow: 1px 0 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.nav-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.nav-logo .accent {
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin-bottom: 0.5rem;
+}
+
+.nav-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary-color);
+}
+
+/* Navigation Headers and Groups */
+.nav-header {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.nav-group {
+    margin-left: 1rem;
+}
+
+.nav-divider {
+    height: 1px;
+    background: var(--text-color);
+    opacity: 0.1;
+    margin: 1rem 0;
+}
+
+/* Main Content */
+.content {
+    margin-left: 320px;
+    padding: 2rem 3rem;
+    flex: 1;
+    width: calc(100% - 320px);
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    background-image: 
+        radial-gradient(circle at 20% 30%, var(--gradient-start) 0%, transparent 20%),
+        radial-gradient(circle at 80% 70%, var(--gradient-end) 0%, transparent 20%),
+        linear-gradient(45deg, var(--gradient-start) 0%, transparent 30%),
+        linear-gradient(-45deg, var(--gradient-end) 0%, transparent 30%);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    position: relative;
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    max-width: 800px;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+/* Links and Buttons */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* Cards and Sections */
+.section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: relative;
+} 
