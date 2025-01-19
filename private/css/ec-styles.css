@@ -8,6 +8,34 @@
     --card-bg: rgba(255, 255, 255, 0.9);
     --gradient-start: rgba(99, 102, 241, 0.1);
     --gradient-end: rgba(79, 70, 229, 0.1);
+    --border-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #818cf8;
+        --secondary-color: #6366f1;
+        --text-color: #f3f4f6;
+        --bg-color: #111827;
+        --nav-bg: rgba(17, 24, 39, 0.8);
+        --card-bg: rgba(31, 41, 55, 0.9);
+        --gradient-start: rgba(129, 140, 248, 0.1);
+        --gradient-end: rgba(99, 102, 241, 0.1);
+        --border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .hamburger span {
+        background-color: var(--text-color);
+    }
+
+    .nav-menu {
+        border-top: 1px solid var(--border-color);
+    }
+
+    .section {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+    }
 }
 
 body {
