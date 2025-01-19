@@ -402,4 +402,13 @@ a:hover {
     border-radius: 3px;
     background: var(--primary-color);
     opacity: 0.2;
+}
+
+.section ul li {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.section ul li:last-child {
+    margin-bottom: 0;
 } 
