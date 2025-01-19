@@ -159,4 +159,42 @@
     .content {
         padding: 1rem;
     }
+
+    .progress-timeline {
+        max-width: 85%;  /* Slightly shorter width */
+        margin: 0.5rem 0;
+        margin-left: 1.5rem;  /* More indentation */
+    }
+
+    .progress-bar {
+        height: 12px;
+        position: relative;
+    }
+
+    .progress-marker {
+        font-size: 0.6rem;
+        margin-top: 0.15rem;
+        white-space: nowrap;
+    }
+
+    .progress-legend {
+        font-size: 0.6rem;
+        margin-top: 0.25rem;
+        margin-left: 1.5rem;  /* Match timeline indentation */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+    }
+
+    .progress-legend-item {
+        margin-right: 0.35rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .progress-legend-color {
+        width: 8px;  /* Even smaller color indicator */
+        height: 8px;
+        margin-right: 0.15rem;
+    }
 } 
