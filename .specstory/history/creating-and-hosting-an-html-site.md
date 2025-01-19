@@ -11488,6 +11488,201 @@ _**Assistant**_
 
 
 
+
+
+I'll adjust the font sizes for the section headings and content:
+
+---
+
+_**Assistant**_
+
+```
+// ... existing code ...
+/* Section Styles */
+.section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.section h3 {
+    font-size: 1.1rem;
+    margin: 1.5rem 0 0.5rem;
+    color: var(--text-color);
+}
+
+.section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 768px) {
+    .section h2 {
+        font-size: 1.3rem;
+    }
+
+    .section h3 {
+        font-size: 1rem;
+    }
+
+    .section p {
+        font-size: 0.9rem;
+    }
+}
+// ... existing code ...
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Let me commit these changes:
+
+---
+
+_**Assistant**_
+
+```
+git add . && git commit -m "Reduce font sizes in terminology sections" && git push origin main
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I've reduced the font sizes in the terminology sections:
+
+1. Section headings (h2):
+   - Desktop: 1.4rem (was 1.6rem)
+   - Mobile: 1.3rem (was 1.4rem)
+
+2. Term headings (h3):
+   - Desktop: 1.1rem (was 1.3rem)
+   - Mobile: 1rem (was 1.2rem)
+
+3. Paragraphs:
+   - Desktop: 0.95rem
+   - Mobile: 0.9rem
+
+I also adjusted the spacing and opacity for better readability. Let me know if you'd like any further adjustments to the sizes!
+
+---
+
+_**User**_
+
+can you add scroll to nav in browser too (not mobile)? and tone down the font size some more in the sections? 
+
+---
+
+_**Assistant**_
+
+
+
+
+
+I'll add scrolling to the desktop navigation and further reduce the font sizes:
+
+---
+
+_**Assistant**_
+
+```
+/* Left Navigation */
+.left-nav {
+    width: 280px;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    position: fixed;
+    height: 100vh;
+    box-shadow: 1px 0 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    overflow-y: auto;
+}
+
+// ... existing code ...
+
+/* Section Styles */
+.section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    color: var(--text-color);
+}
+
+.section h3 {
+    font-size: 1rem;
+    margin: 1.2rem 0 0.4rem;
+    color: var(--text-color);
+}
+
+.section p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 768px) {
+    .section h2 {
+        font-size: 1.1rem;
+    }
+
+    .section h3 {
+        font-size: 0.95rem;
+    }
+
+    .section p {
+        font-size: 0.85rem;
+    }
+}
+```
+
+---
+
+_**Assistant**_
+
+
+
 ---
 
 

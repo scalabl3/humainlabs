@@ -72,6 +72,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 100vh;
     box-shadow: 1px 0 8px rgba(0, 0, 0, 0.1);
     z-index: 100;
+    overflow-y: auto;
 }
 
 .nav-logo {
@@ -200,19 +201,19 @@ a:hover {
 
 /* Section Styles */
 .section h2 {
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
     color: var(--text-color);
 }
 
 .section h3 {
-    font-size: 1.1rem;
-    margin: 1.5rem 0 0.5rem;
+    font-size: 1rem;
+    margin: 1.2rem 0 0.4rem;
     color: var(--text-color);
 }
 
 .section p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.6;
     margin-bottom: 1rem;
     color: var(--text-color);
@@ -221,14 +222,14 @@ a:hover {
 
 @media screen and (max-width: 768px) {
     .section h2 {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 
     .section h3 {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .section p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 } 
