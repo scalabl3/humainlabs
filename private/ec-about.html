@@ -9,6 +9,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/ec-styles.css">
     <link rel="stylesheet" href="css/ec-mobile.css">
+    <style>
+        .fact-container {
+            margin: 2rem 0;
+            width: 100%;
+            max-width: 760px; /* Match content area max-width */
+        }
+        
+        .fact-display {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1rem 0;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            width: 100%;
+        }
+        
+        .fact-display::before {
+            content: '"';
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            position: absolute;
+            top: -1rem;
+            left: 1rem;
+        }
+        
+        .fact-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .next-fact-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+        
+        .next-fact-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .fact-display {
+                padding: 1.5rem;
+            }
+            
+            .fact-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -16,56 +81,99 @@
             <h1>Fun Facts & Unusual Details</h1>
             
             <p class="lead">
-                A random collection of interesting tidbits about my journey, experiences, and what makes me tick.
+                A collection of interesting tidbits about my journey, experiences, and what makes me tick.
             </p>
             
-            <section class="section">
-                <h2>Random Facts</h2>
-                <ul>
-                    <li>At Carnegie Mellon, as an art student I was tutoring the CS kids on how to program, it was kind of funny, particularly given the dynamics of cultures and stereotypes between art and engineering.</li>
-                    
-                    <li>I followed a death metal band called D.I.E. a french acadian band from deep in the bayou of Louisiana and filmed their shows with one of the first digital cameras, a Sony.</li>
-                    
-                    <li>I taught myself Pascal in 1990, and then C++ in 1992. I loved OOP programming and design, it felt super natural to think that way.</li>
-                    
-                    <li>I lived in New Orleand when Katrina hit, I evacuated, but I got to see the apocolypse 1 week later first hand, a completely powerless empty city with no people.</li>
-                    
-                    <li>I came up with my first psychological theory of how the brain works when I was around 17, I still use some of the ideas today.</li>
-                    
-                    <li>I was a Boy Scout and went camping (canoing, hiking, caving, kayaking, backpacking; in every kind of weather) twice a month for a good part of my childhood.</li>
-                    
-                    <li>While sitting with neighbors on the porch steps, I once had a gun pointed at me by a clearly disturbed and drugged out vietnamese dude in New Orleans. He asked, "Where you from man?" I thought for a second and said, "I'm from the future." He laughed and ambled away. (Phew!)</li>
-                    
-                    <li>I tried to crack my first game using assembly somewhere around 1990, I actually did get it to work and skip the disk check.</li>
-                    
-                    <li>I have been a programmer, an Information Architect, studied HCI in the early days (Jakob Nielsen) and design principles (Edward Tufte). I ran my own web design company for a while.</li>
-                    
-                    <li>When I was 15 I found and joined a hacker group called Genesis on a BBS and using a 19200 baud modem was a courier for the group, getting the latest cracked games and uploading them to distribution BBS's. I had never talked to anyone in the group, but I got a random call to disappear one day (scaring the living crap out of me) that they got busted by the FBI for fraud.</li>
-                    
-                    <li>I played drums and in bands for a while, until it became really inconvenient to haul the drums around.</li>
-                    
-                    <li>I taught myself how to snowboard and got myself up to 30' extra large jumps up in Mt. Hood, Oregon.</li>
-                    
-                    <li>I had a hard life growing up, extremely marginalized, but it gave me a lot of valuable perspectives, empathy, and skills. As an outsider, as a child it was terrible, but as an adult it became one of my greatest assets.</li>
-                    
-                    <li>My art education was centered around Conceptual Art, which is one of the most useful abilities I have learned in my life: Deconstructing and reconstructing ideas. I was infused with ideas from every discipline, philosophy, psychology, physics, biology, creative writing, creativity itself, and some of the most insightful thinkers in human history.</li>
-                    
-                    <li>I grew up as a first generation American, my parents were immigrants from India who came in here in 1968. I was the only Sikh and Indian in most of my schools.</li>
-                    
-                    <li>I traveled Europe for 6 weeks because I won a flexipass from a career fair day at Carnegie Mellon. I did the whole trip for under $300 because I lost my wallet a week in and still visited 6 different countries! Trading cooking Indian food for hostel stays and occassionally sleeping outside the train station.</li>
-                </ul>
-            </section>
+            <div class="fact-container">
+                <button class="next-fact-btn" id="nextFactBtn">Recursively Generate Another Fact</button>
+                <div class="fact-display">
+                    <p class="fact-text" id="currentFact"></p>
+                </div>
+            </div>
         </main>
     </div>
 
-    <script>
-        // Cache busting for development
-        if (localStorage.getItem('lastCacheClear') === null || 
-            Date.now() - parseInt(localStorage.getItem('lastCacheClear')) > 300000) { // 5 minutes
-            localStorage.setItem('lastCacheClear', Date.now().toString());
-            window.location.reload(true);
-        }
-    </script>
     <script src="js/ec-main.js"></script>
+    <script>
+        // Fun facts array
+        const facts = [
+            "I taught myself Pascal in 1990, and then C++ in 1992. I loved OOP programming and design, it felt super natural to think that way.",
+            "I tried to crack my first game using assembly somewhere around 1990, I actually did get it to work and skip the disk check.",
+            "When I was 15 I found and joined a hacker group called Genesis on a BBS and using a 19200 baud modem was a courier for the group, getting the latest cracked games and uploading them to distribution BBS's. I had never talked to anyone in the group, but I got a random call to disappear one day (scaring the living crap out of me) that they got busted by the FBI for fraud.",
+            "I had a hard life growing up, extremely marginalized, but it gave me a lot of valuable perspectives, empathy, and skills. As an outsider, as a child it was terrible, but as an adult it became one of my greatest assets.",
+            "I came up with my first psychological theory of how the brain works when I was around 17, I still use some of the ideas today.",
+            "At Carnegie Mellon, as an art student I was tutoring the CS kids on how to program, it was kind of funny, particularly given the dynamics of cultures and stereotypes between art and engineering.",
+            "I have been a programmer, an Information Architect, studied HCI in the early days (Jakob Nielsen) and design principles (Edward Tufte). I ran my own web design company for a while.",
+            "I played drums and in bands for a while, until it became really inconvenient to haul the drums around.",
+            "My art education was centered around Conceptual Art, which is one of the most useful abilities I have learned in my life: Deconstructing and reconstructing ideas. I was infused with ideas from every discipline, philosophy, psychology, physics, biology, creative writing, creativity itself, and some of the most insightful thinkers in human history.",
+            "I taught myself how to snowboard and got myself up to 30' extra large jumps up in Mt. Hood, Oregon.",
+            "I was a Boy Scout and went camping (canoing, hiking, caving, kayaking, backpacking; in every kind of weather) twice a month for a good part of my childhood.",
+            "I grew up as a first generation American, my parents were immigrants from India who came in here in 1968. I was the only Sikh and Indian in most of my schools.",
+            "I followed a death metal band called D.I.E. a french acadian band from deep in the bayou of Louisiana and filmed their shows with one of the first digital cameras, a Sony.",
+            "I traveled Europe for 6 weeks because I won a flexipass from a career fair day at Carnegie Mellon. I did the whole trip for under $300 because I lost my wallet a week in and still visited 6 different countries! Trading cooking Indian food for hostel stays and occassionally sleeping outside the train station.",
+            "I lived in New Orleand when Katrina hit, I evacuated, but I got to see the apocolypse 1 week later first hand, a completely powerless empty city with no people.",
+            "While sitting with neighbors on the porch steps, I once had a gun pointed at me by a clearly disturbed and drugged out vietnamese dude in New Orleans. He asked, \"Where you from man?\" I thought for a second and said, \"I'm from the future.\" He laughed and ambled away. (Phew!)"
+        ];
+        
+        // Button text options (AI researcher puns/jokes)
+        const buttonTexts = [
+            "Recursively Generate Another Fact",
+            "Backpropagate to Next Fact",
+            "Train on Next Sample",
+            "Optimize for Next Fact",
+            "Iterate Through Memory",
+            "Transfer Context to Next Fact",
+            "Emerge Next Fact",
+            "Vectorize Another Memory"
+        ];
+        
+        // FIFO cache for last 15 shown facts
+        const recentFacts = [];
+        const CACHE_SIZE = 15;
+
+        function getRandomItem(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
+        function getUniqueRandomFact() {
+            let availableFacts = facts.filter(fact => !recentFacts.includes(fact));
+            
+            // If we've shown all facts, reset but keep the most recent ones in cache
+            if (availableFacts.length === 0) {
+                availableFacts = facts.filter(fact => !recentFacts.slice(-3).includes(fact));
+            }
+            
+            const fact = getRandomItem(availableFacts);
+            
+            // Update FIFO cache
+            recentFacts.push(fact);
+            if (recentFacts.length > CACHE_SIZE) {
+                recentFacts.shift(); // Remove oldest fact
+            }
+            
+            return fact;
+        }
+        
+        function updateFact() {
+            const factDisplay = document.getElementById('currentFact');
+            const nextBtn = document.getElementById('nextFactBtn');
+            
+            // Fade out
+            factDisplay.style.opacity = 0;
+            
+            setTimeout(() => {
+                // Update content
+                factDisplay.textContent = getUniqueRandomFact();
+                nextBtn.textContent = getRandomItem(buttonTexts);
+                
+                // Fade in
+                factDisplay.style.opacity = 1;
+            }, 300);
+        }
+        
+        // Initialize
+        document.getElementById('nextFactBtn').addEventListener('click', updateFact);
+        updateFact(); // Show first fact
+    </script>
 </body>
 </html> 
