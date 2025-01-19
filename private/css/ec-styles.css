@@ -15,7 +15,7 @@
     --h3-size: 1.15rem;
     --h4-size: 1.05rem;
     --body-size: 0.9375rem;
-    --small-size: 0.8125rem;
+    --small-size: 0.72rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -244,8 +244,10 @@ h3 + h4 {
         --h2-size: 1.25rem;
         --h3-size: 1.1rem;
         --h4-size: 1rem;
-        --body-size: 0.875rem;
-        --small-size: 0.8125rem;
+        /* --body-size: 0.875rem;
+        --small-size: 0.8125rem; */
+        --body-size: 0.825rem;
+        --small-size: 0.72rem;
     }
 }
 
@@ -476,7 +478,7 @@ a:hover {
 .progress-bar {
     height: 24px;
     background: var(--nav-bg);
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
     position: relative;
     border: 1px solid var(--border-color);
@@ -492,7 +494,7 @@ a:hover {
 
 .progress-marker {
     position: absolute;
-    top: 0;
+    top: -8px;
     transform: translateX(-50%);
     font-size: var(--small-size);
     color: var(--text-color);
