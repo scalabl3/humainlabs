@@ -10020,6 +10020,171 @@ I'll adjust the font sizes to be slightly smaller across the site while keeping 
 
 ---
 
+_**Assistant**_
+
+```
+// ... existing code ...
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    position: relative;
+}
+
+.lead {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    max-width: 800px;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.nav-header {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.nav-menu a {
+    font-size: 0.95rem;
+}
+// ... existing code ...
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+Let me also adjust the mobile font sizes:
+
+---
+
+_**Assistant**_
+
+```
+// ... existing code ...
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+}
+// ... existing code ...
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+Let me commit these changes:
+
+---
+
+_**Assistant**_
+
+```
+git add . && git commit -m "Reduce font sizes across the site while maintaining logo size" && git push origin main
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+I've reduced the font sizes across the site while keeping the logo size the same. The changes include:
+
+1. Main content:
+   - H1: 2.5rem → 2.2rem
+   - H2: Added at 1.6rem
+   - H3: Added at 1.3rem
+   - Lead text: 1.2rem → 1.1rem
+
+2. Navigation:
+   - Nav headers: 0.9rem → 0.8rem
+   - Nav menu items: Added explicit 0.95rem
+
+3. Mobile sizes:
+   - H1: 2rem → 1.8rem
+   - H2: Added at 1.4rem
+   - H3: Added at 1.2rem
+   - Lead text: 1.1rem → 1rem
+
+Let me know if you'd like any further adjustments to the sizes!
+
+---
+
+_**User**_
+
+last logistical thing, on mobile the menu is long and you can't scroll to see the whole thing. Maybe the gaps between menu items should be a little less and perhaps the font a little smaller? what can we do to address this? 
+
+---
+
+_**Assistant**_
+
+
+
+I'll adjust the mobile menu spacing and font sizes to make it more compact and scrollable. Here are the changes:
+
+---
+
+_**Assistant**_
+
+```
+undefined
+```
+
+---
+
+_**Assistant**_
+
+
+
+---
+
 
 
 ---

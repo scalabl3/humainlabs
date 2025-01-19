@@ -67,13 +67,37 @@
         top: 100%;
         left: 0;
         background: var(--bg-color);
-        padding: 1rem;
+        padding: 0.75rem;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 
     .nav-menu.active {
         display: block;
         animation: slideDown 0.3s ease forwards;
+    }
+
+    .nav-menu li {
+        margin-bottom: 0.25rem;
+    }
+
+    .nav-menu a {
+        font-size: 0.9rem;
+        padding: 0.35rem 0;
+    }
+
+    .nav-header {
+        font-size: 0.75rem;
+        margin: 1rem 0 0.25rem;
+    }
+
+    .nav-group {
+        margin-left: 0.75rem;
+    }
+
+    .nav-divider {
+        margin: 0.75rem 0;
     }
 
     .content {
