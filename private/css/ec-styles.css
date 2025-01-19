@@ -9,6 +9,7 @@
     --gradient-start: rgba(99, 102, 241, 0.1);
     --gradient-end: rgba(79, 70, 229, 0.1);
     --border-color: rgba(0, 0, 0, 0.1);
+    --header-height: 60px;
 }
 
 @media (prefers-color-scheme: dark) {

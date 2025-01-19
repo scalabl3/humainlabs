@@ -63,19 +63,23 @@
     .nav-menu {
         display: none;
         width: 100%;
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: var(--header-height, 60px);
         left: 0;
+        right: 0;
+        bottom: 0;
         background: var(--bg-color);
         padding: 0.75rem;
-        max-height: calc(100vh - 80px);
-        overflow-y: auto;
+        height: calc(100vh - var(--header-height, 60px));
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 
     .nav-menu.active {
         display: block;
         animation: slideDown 0.3s ease forwards;
+        overscroll-behavior: contain;
     }
 
     .nav-menu li {
