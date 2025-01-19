@@ -10,6 +10,12 @@
     --gradient-end: rgba(79, 70, 229, 0.1);
     --border-color: rgba(0, 0, 0, 0.1);
     --header-height: 60px;
+    --h1-size: 1.75rem;
+    --h2-size: 1.35rem;
+    --h3-size: 1.15rem;
+    --h4-size: 1.05rem;
+    --body-size: 0.9375rem;
+    --small-size: 0.8125rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -50,11 +56,197 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     background: var(--bg-color);
+    font-size: var(--body-size);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
+    line-height: 1.3;
+}
+
+/* Base spacing for headings */
+h1 {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    font-size: var(--h1-size);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 1.2em;
+    font-size: var(--h2-size);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: var(--h3-size);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+}
+
+h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.8em;
+    font-size: var(--h4-size);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+}
+
+/* Content spacing */
+p {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: var(--body-size);
+    line-height: 1.4;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+/* List spacing */
+ul, ol {
+    margin-top: 0.3em;
+    margin-bottom: 0.75em;
+    padding-left: 2.5em;
+}
+
+li {
+    margin-bottom: 0.35rem;
+    line-height: 1.4;
+}
+
+/* Reset top margin for first headings */
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+    margin-top: 0;
+}
+
+/* Spacing between same-level headings */
+h1 ~ h1 {
+    margin-top: 8em;
+}
+
+h2 ~ h2 {
+    margin-top: 6em;
+}
+
+h3 ~ h3 {
+    margin-top: 4em;
+}
+
+/* Content immediately following headings should be closer */
+h1 + p, h2 + p, h3 + p, h4 + p,
+h1 + ul, h2 + ul, h3 + ul, h4 + ul,
+h1 + ol, h2 + ol, h3 + ol, h4 + ol {
+    margin-top: 0.2em;
+}
+
+/* When a heading follows another heading, use tighter spacing */
+h1 + h2, h2 + h3, h3 + h4 {
+    margin-top: 2em;
+}
+
+/* Section and heading hierarchy */
+.section {
+    position: relative;
+    margin-bottom: 6em;  /* Large gap between major sections */
+}
+
+/* Primary sections (containing h1) */
+.section h1 {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+}
+
+/* Subsections */
+.section .section {
+    margin-bottom: 4em;  /* Smaller gap for nested sections */
+}
+
+/* Further nested sections */
+.section .section .section {
+    margin-bottom: 3em;
+}
+
+/* Content spacing within sections */
+.section > p,
+.section > ul,
+.section > ol {
+    margin-bottom: 1em;
+}
+
+.section > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Heading spacing within sections */
+.section h1,
+.section h2,
+.section h3,
+.section h4,
+.section h5,
+.section h6 {
+    margin-top: 3em;  /* Space above new headings within sections */
+    margin-bottom: 1em;
+}
+
+/* First heading in a section shouldn't have top margin */
+.section > h1:first-child,
+.section > h2:first-child,
+.section > h3:first-child,
+.section > h4:first-child {
+    margin-top: 0;
+}
+
+/* Tighter spacing for content immediately following headings */
+.section h1 + *,
+.section h2 + *,
+.section h3 + *,
+.section h4 + * {
+    margin-top: 0.2em !important;
+}
+
+/* List spacing within sections */
+.section ul,
+.section ol {
+    padding-left: 2.5em;
+    margin-bottom: 1.5em;
+}
+
+.section li {
+    margin-bottom: 0.35em;
+}
+
+.section li:last-child {
+    margin-bottom: 0;
+}
+
+/* Remove the previous spacing rules that were causing issues */
+h1 ~ h1,
+h2 ~ h2,
+h3 ~ h3,
+h1 + h2,
+h2 + h3,
+h3 + h4 {
+    margin-top: initial;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    :root {
+        --h1-size: 1.5rem;
+        --h2-size: 1.25rem;
+        --h3-size: 1.1rem;
+        --h4-size: 1rem;
+        --body-size: 0.875rem;
+        --small-size: 0.8125rem;
+    }
 }
 
 .container {
@@ -93,7 +285,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-logo {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.5rem;
+    font-size: var(--h2-size);
     font-weight: 600;
     margin-bottom: 2rem;
     display: block;
@@ -106,7 +298,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu li {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.2rem;
 }
 
 .nav-menu a {
@@ -115,7 +307,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.35rem 0;
     display: block;
     transition: color 0.3s ease;
-    font-size: 0.95rem;
+    font-size: var(--small-size);
 }
 
 .nav-menu a:hover,
@@ -129,10 +321,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     color: var(--text-color);
     opacity: 0.7;
-    font-size: 0.8rem;
+    font-size: var(--small-size);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin: 1rem 0 0.25rem;
+    margin: 0.75rem 0 0.2rem;
 }
 
 .nav-group {
@@ -143,7 +335,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 1px;
     background: var(--text-color);
     opacity: 0.1;
-    margin: 0.75rem 0;
+    margin: 0.5rem 0;
 }
 
 /* Main Content */
@@ -175,36 +367,13 @@ h1, h2, h3, h4, h5, h6 {
     background: radial-gradient(circle at 0% 50%, var(--gradient-start) 0%, transparent 70%);
 }
 
-h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-}
-
 .lead {
-    font-size: 1.1rem;
+    font-size: var(--h4-size);
     color: var(--text-color);
     opacity: 0.9;
     max-width: 800px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     position: relative;
-}
-
-h2 {
-    font-size: 1.1rem;
-    margin: 1rem 0 0.25rem;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
-}
-
-h3 {
-    font-size: 0.9rem;
-    margin: 1rem 0 0.25rem;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
 }
 
 /* Links and Buttons */
@@ -218,54 +387,13 @@ a:hover {
     color: var(--secondary-color);
 }
 
-/* Cards and Sections */
-.section {
-    margin-bottom: 2rem;
-    position: relative;
-}
-
-/* Section Styles */
-.section h2,
-.section h3 {
-    font-size: inherit;
-}
-
-.section h4 {
-    font-size: 1rem;
-    margin: 1.2rem 0 0.2rem;
-    color: var(--text-color);
-    font-weight: 600;
-}
-
-.section p {
-    font-size: 0.85rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    color: var(--text-color);
-    opacity: 0.9;
-}
-
-@media screen and (max-width: 768px) {
-    .section h2 {
-        font-size: 1.1rem;
-    }
-
-    .section h4 {
-        font-size: 0.95rem;
-    }
-
-    .section p {
-        font-size: 0.8rem;
-    }
-}
-
 /* Timeline Diagrams */
 .timeline {
     position: relative;
     background: var(--nav-bg);
     border-radius: 8px;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
+    padding: 1rem;
+    margin: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -273,7 +401,7 @@ a:hover {
     position: relative;
     height: 4px;
     background: var(--border-color);
-    margin: 2rem 0;
+    margin: 1.25rem 0;
     border-radius: 2px;
 }
 
@@ -284,7 +412,7 @@ a:hover {
     background: var(--primary-color);
     color: white;
     border-radius: 4px;
-    font-size: 0.8rem;
+    font-size: var(--small-size);
     transform: translateX(-50%);
     white-space: nowrap;
 }
@@ -313,10 +441,10 @@ a:hover {
 }
 
 .timeline-legend {
-    font-size: 0.8rem;
+    font-size: var(--small-size);
     color: var(--text-color);
     opacity: 0.8;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 .timeline-legend span {
@@ -339,9 +467,9 @@ a:hover {
 .progress-timeline {
     width: 600px;
     max-width: 100%;
-    margin: 2rem 0;
+    margin: 1rem 0;
     position: relative;
-    padding-top: 1.5rem;
+    padding-top: 1rem;
     margin-left: 50px;
 }
 
@@ -366,7 +494,7 @@ a:hover {
     position: absolute;
     top: 0;
     transform: translateX(-50%);
-    font-size: 0.8rem;
+    font-size: var(--small-size);
     color: var(--text-color);
     font-weight: 500;
 }
@@ -384,9 +512,9 @@ a:hover {
 
 .progress-legend {
     display: flex;
-    gap: 1.5rem;
-    margin-top: 1rem;
-    font-size: 0.8rem;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    font-size: var(--small-size);
     color: var(--text-color);
 }
 
@@ -402,13 +530,4 @@ a:hover {
     border-radius: 3px;
     background: var(--primary-color);
     opacity: 0.2;
-}
-
-.section ul li {
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-}
-
-.section ul li:last-child {
-    margin-bottom: 0;
 } 
