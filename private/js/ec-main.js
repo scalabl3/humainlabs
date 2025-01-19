@@ -13,14 +13,20 @@ const navStructure = [
     ]},
     
     // Methods & Artifacts
-    { type: 'header', text: 'Research' },
+    { type: 'header', text: 'Methodologies' },
     { type: 'group', items: [
-        { href: 'ec-artifacts.html', text: 'AI Generated Artifacts' },
-        { href: 'ec-methods.html', text: 'Context Development' },
+        { href: 'ec-methods.html', text: 'Ephemeral Context Development' },
+        { href: 'ec-artifacts.html', text: 'AI Generated Artifacts' },        
+    ]},
+
+    // Methods & Artifacts
+    { type: 'header', text: 'Results' },
+    { type: 'group', items: [
         { href: 'ec-successes.html', text: 'Notable Successes' },
         { href: 'ec-failures.html', text: 'Notable Failures' },
         { href: 'ec-humanlike.html', text: 'Humanlike Observations' }
     ]},
+
     
     // Personal section
     { type: 'divider' },
