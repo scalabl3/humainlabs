@@ -11430,6 +11430,64 @@ _**Assistant**_
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+Let me commit these changes:
+
+---
+
+_**Assistant**_
+
+```
+git add . && git commit -m "Add terminology content to HTML page" && git push origin main
+```
+
+---
+
+_**Assistant**_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I've added the terminology content to the HTML file, organizing it into two main sections:
+1. Core Terms
+2. Performance Metrics
+
+Each term has its heading and detailed explanation, and I've wrapped them in `section` elements with the `section` class for consistent styling. Let me know if you'd like any adjustments to the layout or organization!
+
+---
+
+_**User**_
+
+the fonts are too big in those sections, tone it down a bit
+
+---
+
+_**Assistant**_
+
+
+
 ---
 
 

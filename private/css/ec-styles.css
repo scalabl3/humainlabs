@@ -196,4 +196,39 @@ a:hover {
     border-radius: 1rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     position: relative;
+}
+
+/* Section Styles */
+.section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.section h3 {
+    font-size: 1.1rem;
+    margin: 1.5rem 0 0.5rem;
+    color: var(--text-color);
+}
+
+.section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 768px) {
+    .section h2 {
+        font-size: 1.3rem;
+    }
+
+    .section h3 {
+        font-size: 1rem;
+    }
+
+    .section p {
+        font-size: 0.9rem;
+    }
 } 
