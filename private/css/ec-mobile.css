@@ -197,4 +197,18 @@
         height: 8px;
         margin-right: 0.15rem;
     }
+
+    .page-navigation {
+        margin: 2rem -1rem 0;
+        padding: 1.5rem 1rem 0;
+    }
+    
+    .page-navigation a {
+        font-size: 0.9rem;
+    }
+    
+    .page-navigation svg {
+        width: 16px;
+        height: 16px;
+    }
 } 

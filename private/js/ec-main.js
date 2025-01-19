@@ -51,7 +51,7 @@ function generateNavigation() {
     const logo = document.createElement('a');
     logo.href = 'ec-overview.html';
     logo.className = 'nav-logo';
-    logo.innerHTML = 'Humain<span class="accent">Labs.ai</span><span class="author-name"> - Jasdeep Jaitla</span>';
+    logo.innerHTML = 'Humain<span class="accent">Labs.ai</span><br/><span class="author-name">Jasdeep Jaitla</span>';
     
     const hamburger = document.createElement('div');
     hamburger.className = 'hamburger';
@@ -125,6 +125,101 @@ function generateNavigation() {
     nav.appendChild(ul);
     return nav;
 }
+
+// Function to get flattened navigation items
+function getFlatNavItems() {
+    const items = [];
+    navStructure.forEach(item => {
+        if (item.type === 'link') {
+            items.push(item);
+        } else if (item.type === 'group') {
+            item.items.forEach(subItem => items.push(subItem));
+        }
+    });
+    return items;
+}
+
+// Generate next/previous navigation
+function generatePageNavigation() {
+    const content = document.querySelector('.content');
+    if (!content) return;
+
+    // Get current page URL
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+    
+    // Get flattened nav items
+    const navItems = getFlatNavItems();
+    const currentIndex = navItems.findIndex(item => item.href === currentPage);
+    if (currentIndex === -1) return;
+
+    // Create navigation container
+    const pageNav = document.createElement('div');
+    pageNav.className = 'page-navigation';
+    pageNav.style.cssText = `
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-color);
+    `;
+
+    // Previous link
+    if (currentIndex > 0) {
+        const prevItem = navItems[currentIndex - 1];
+        const prevLink = document.createElement('a');
+        prevLink.href = prevItem.href;
+        prevLink.className = 'prev-page';
+        prevLink.style.cssText = `
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--text-color);
+        `;
+        prevLink.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+            <span>${prevItem.text}</span>
+        `;
+        pageNav.appendChild(prevLink);
+    } else {
+        // Empty div for spacing
+        pageNav.appendChild(document.createElement('div'));
+    }
+
+    // Next link
+    if (currentIndex < navItems.length - 1) {
+        const nextItem = navItems[currentIndex + 1];
+        const nextLink = document.createElement('a');
+        nextLink.href = nextItem.href;
+        nextLink.className = 'next-page';
+        nextLink.style.cssText = `
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--text-color);
+        `;
+        nextLink.innerHTML = `
+            <span>${nextItem.text}</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+            </svg>
+        `;
+        pageNav.appendChild(nextLink);
+    }
+
+    content.appendChild(pageNav);
+}
+
+// Initialize everything
+document.addEventListener('DOMContentLoaded', () => {
+    generateNavigation();
+    generatePageNavigation();
+    addCacheBuster();
+});
 
 // Initialize navigation
 document.addEventListener('DOMContentLoaded', function() {
