@@ -22,9 +22,11 @@ const navStructure = [
     // Personal section
     { type: 'divider' },
     { type: 'header', text: 'About' },
-    { type: 'link', href: 'ec-interpretability.html', text: 'Interpretability: Why I Fit' },
-    { type: 'link', href: 'ec-resume.html', text: 'Resume' },
-    { type: 'link', href: 'ec-about.html', text: 'Fun Facts' }
+    { type: 'group', items: [
+        { href: 'ec-interpretability.html', text: 'Interpretability: Why I Fit' },
+        { href: 'ec-resume.html', text: 'Resume' },
+        { href: 'ec-about.html', text: 'Fun Facts' }
+    ]}
 ];
 
 // Generate navigation
