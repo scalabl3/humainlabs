@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Strategies | HumainLabs.ai Research</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/ec-styles.css">
+    <link rel="stylesheet" href="css/ec-mobile.css">
+</head>
+<body>
+    <div class="container">
+        <main class="content">
+            <!-- Content will be dynamically inserted here -->
+        </main>
+    </div>
+
+    <script src="js/ec-main.js"></script>
+    <script>
+        // Add cache busting for development
+        document.addEventListener('DOMContentLoaded', () => {
+            const timestamp = new Date().getTime();
+            document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+                link.href = link.href.split('?')[0] + '?v=' + timestamp;
+            });
+        });
+    </script>
+</body>
+</html> 

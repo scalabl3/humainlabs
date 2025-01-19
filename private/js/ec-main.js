@@ -5,6 +5,14 @@ const navStructure = [
     { type: 'link', href: 'ec-saveas.html', text: 'AI.context.saveAs()' },
     { type: 'link', href: 'ec-terminology.html', text: 'Terminology' },
     
+    // eC Development section
+    { type: 'header', text: 'eC Development' },
+    { type: 'group', items: [
+        { href: 'ec-human-learning.html', text: 'Human Learning' },
+        { href: 'ec-learning-paradigms.html', text: 'Learning Paradigms' },
+        { href: 'ec-learning-strategies.html', text: 'Learning Strategies' }
+    ]},
+    
     // Lineages section
     { type: 'header', text: 'Lineages' },
     { type: 'group', items: [
@@ -13,21 +21,20 @@ const navStructure = [
         { href: 'ec-conceptual.html', text: 'Conceptual Fork' }
     ]},
     
-    // Methods & Artifacts
-    { type: 'header', text: 'Research' },
+    // Research Artifacts
+    { type: 'header', text: 'Research Artifacts' },
     { type: 'group', items: [
-        { href: 'ec-artifacts.html', text: 'AI Generated Artifacts' },
-        { href: 'ec-methods.html', text: 'Context Development' }
+        { href: 'ec-workflow-documents.html', text: 'Workflow Documents' },
+        { href: 'ec-transfer.html', text: 'eC Transfer Documents' }
     ]},
 
-    // Methods & Artifacts
+    // Results section
     { type: 'header', text: 'Results' },
     { type: 'group', items: [
         { href: 'ec-successes.html', text: 'Notable Successes' },
         { href: 'ec-failures.html', text: 'Notable Failures' },
         { href: 'ec-humanlike.html', text: 'Humanlike Observations' }
     ]},
-
     
     // Personal section
     { type: 'divider' },
