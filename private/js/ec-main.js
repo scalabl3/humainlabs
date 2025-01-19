@@ -34,20 +34,24 @@ function generateNavigation() {
     const nav = document.createElement('nav');
     nav.className = 'left-nav';
 
-    // Add logo
+    // Add logo and hamburger in a container
+    const headerContainer = document.createElement('div');
+    headerContainer.className = 'header-container';
+
     const logo = document.createElement('a');
     logo.href = 'ec-saveas.html';
     logo.className = 'nav-logo';
     logo.innerHTML = 'Humain<span class="accent">Labs.ai</span><span class="author-name"> - Jasdeep Jaitla</span>';
-    nav.appendChild(logo);
-
-    // Add hamburger menu
+    
     const hamburger = document.createElement('div');
     hamburger.className = 'hamburger';
     for (let i = 0; i < 3; i++) {
         hamburger.appendChild(document.createElement('span'));
     }
-    nav.appendChild(hamburger);
+
+    headerContainer.appendChild(hamburger);
+    headerContainer.appendChild(logo);
+    nav.appendChild(headerContainer);
 
     // Add menu items
     const ul = document.createElement('ul');
