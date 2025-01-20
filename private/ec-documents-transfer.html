@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics tag -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-36LDNMWK7X"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -18,90 +18,41 @@
     <title>eC Transfer Documents | HumainLabs.ai Research</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Inter:wght@400;600&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/ec-styles.css">
     <link rel="stylesheet" href="css/ec-mobile.css">
+    <style>
+        /* Page-specific styles go here */
+        /* Note: Most styles should go in ec-styles.css */
+    </style>
 </head>
 <body>
     <div class="container">
         <main class="content">
             <h1>eC Transfer Documents</h1>
 
-            <p class="lead">
-                Documentation of the evolving context transfer process, including methodologies, observations, and outcomes from various transfer attempts and implementations.
-            </p>
+            <p class="lead">Documentation of the evolving context transfer process, including methodologies, observations, and outcomes from various transfer attempts and implementations.</p>
 
-            <h2>Transfer Documentation</h2>
+            <p>The foundational documents are used first, they are listed here <a href="ec-documents-foundation.html">Foundational Documents</a>.</p>
+            
+            <section class="section">
+                <h2>Transfer Documentation</h2>
+                <h3>Structured Handoff Document (Synarion)</h3>
+                <p>File: <code>02-process/ai/aic-handoff-template.md</code></p>
+                <ul>
+                    <li>A templated document for AIC to systematically describe it's eC for the next AIC to read</li>
+                </ul>
 
-            <h3 id="process-documentation">Process Documentation</h3>
-            <ul>
-                <li>Step-by-step transfer procedures</li>
-                <li>Environmental requirements</li>
-                <li>Setup and configuration details</li>
-            </ul>
-
-            <h3 id="transfer-patterns">Transfer Patterns</h3>
-            <ul>
-                <li>Successful transfer patterns</li>
-                <li>Common challenges and solutions</li>
-                <li>Pattern optimization strategies</li>
-            </ul>
-
-            <h3 id="implementation-examples">Implementation Examples</h3>
-            <ul>
-                <li>Case studies of transfers</li>
-                <li>Code snippets and configurations</li>
-                <li>Performance metrics</li>
-            </ul>
-
-            <h2>Analysis and Insights</h2>
-
-            <h3 id="success-factors">Success Factors</h3>
-            <ul>
-                <li>Key elements for successful transfers</li>
-                <li>Critical environmental conditions</li>
-                <li>Resource requirements</li>
-            </ul>
-
-            <h3 id="challenge-resolution">Challenge Resolution</h3>
-            <ul>
-                <li>Common obstacles encountered</li>
-                <li>Solution strategies</li>
-                <li>Prevention methods</li>
-            </ul>
-
-            <h3 id="performance-metrics">Performance Metrics</h3>
-            <ul>
-                <li>Transfer efficiency measurements</li>
-                <li>Quality assessment criteria</li>
-                <li>Success rate analysis</li>
-            </ul>
-
-            <h2 id="future-improvements">Future Improvements</h2>
-            <ul>
-                <li>Identified optimization opportunities</li>
-                <li>Proposed methodology enhancements</li>
-                <li>Research priorities</li>
-            </ul>
-
-            <h2 id="integration-guidelines">Integration Guidelines</h2>
-            <ul>
-                <li>System requirements</li>
-                <li>Implementation recommendations</li>
-                <li>Best practices and standards</li>
-            </ul>
+                <h3>Structured Inquiry Document (Synarion)</h3>
+                <p>File: <code>02-process/ai/aic-inquiry-template.md</code></p>
+                <ul>
+                    <li>A templated document for a new AIC to systematically ask the previous AIC to respond to, used before CTL to be able to have AIC-AIC communication and results in a short prompt-response back and forth chain between AIC's</li>
+                </ul>
+            </section>
+            
         </main>
     </div>
 
     <script src="js/ec-main.js"></script>
-    <script>
-        // Add cache busting for development
-        document.addEventListener('DOMContentLoaded', () => {
-            const timestamp = new Date().getTime();
-            document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
-                link.href = link.href.split('?')[0] + '?v=' + timestamp;
-            });
-        });
-    </script>
 </body>
 </html> 
