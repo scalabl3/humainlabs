@@ -2,6 +2,8 @@
 :root {
     --primary-color: #6366f1;
     --secondary-color: #4f46e5;
+    --accent-color-light: #9b9df5;   /* brighter version of primary */
+    --accent-color-medium: #7f82f3;  /* medium bright version of primary */
     --text-color: #1f2937;
     --bg-color: #ffffff;
     --nav-bg: rgba(255, 255, 255, 0.8);
@@ -29,6 +31,8 @@
     :root {
         --primary-color: #818cf8;
         --secondary-color: #6366f1;
+        --accent-color-light: #b1b8fa;   /* brighter version of dark mode primary */
+        --accent-color-medium: #99a2f9;  /* medium bright version of dark mode primary */
         --text-color: rgba(243, 244, 246, 0.75);
         --bg-color: #111827;
         --nav-bg: rgba(17, 24, 39, 0.8);
@@ -48,7 +52,7 @@
 
     .section {
         background: none;
-        border: none;
+        border: none;        
     }
 
     .content::before {
@@ -87,8 +91,6 @@ h2 {
     font-size: var(--h2-size);
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
 }
 
 h3 {
@@ -110,11 +112,17 @@ h4, h5, h6 {
 /* Content spacing */
 p {
     margin-top: 0;
-    margin-bottom: 0.5em;
+    margin-bottom: 1.2rem;  /* Increased for better paragraph separation */
     font-size: var(--body-size);
-    line-height: 1.4;
+    line-height: 1.6;      /* Increased for better readability */
     color: var(--text-color);
     opacity: 0.9;
+    max-width: 90ch;       /* Optimal line length for readability */
+}
+
+/* Reset margin for last paragraphs in sections */
+section p:last-of-type {
+    margin-bottom: 0;
 }
 
 /* List spacing */
@@ -159,143 +167,272 @@ h1 + h2, h2 + h3, h3 + h4 {
     margin-top: 2em;
 }
 
-/* Section and heading hierarchy */
+/* Section Styles */
 .section {
     position: relative;
-    margin-bottom: 5em;  /* Large gap between major sections */
-    margin-top: 2em;
-}
-
-/* Primary sections (containing h1) */
-.section h1 {
+    margin-bottom: 4rem;  /* Standardized spacing */
     margin-top: 0;
-    margin-bottom: 1.5em;
 }
 
-/* Subsections */
+/* Nested sections get progressively smaller margins */
 .section .section {
-    margin-bottom: 4em;  /* Smaller gap for nested sections */
+    margin-bottom: 3rem;
 }
 
-/* Further nested sections */
 .section .section .section {
-    margin-bottom: 3em;
+    margin-bottom: 2rem;
 }
 
-/* Content spacing within sections */
+/* Section Content Spacing */
 .section > p,
 .section > ul,
+.section > ol,
+.section > pre,
+.section > blockquote {
+    padding-left: 1.5rem;      /* Keep consistent indent */
+}
+
+/* Keep lists with consistent visual alignment considering their bullets/numbers */
+.section > ul,
 .section > ol {
-    margin-bottom: 1em;
+    margin-bottom: 0.75em;     /* List-specific margin */
+    padding-left: 3.5rem;      /* 1.5rem section indent + 2rem for bullets */
+    margin-left: 0;
+}
+
+/* Adjust list items to align with other content */
+.section li {
+    margin-bottom: 0.35rem;
+    padding-left: 0.5rem;
+}
+
+/* Keep headings at the left edge for hierarchy */
+.section h2,
+.section h3,
+.section h4 {
+    padding-left: 0;        /* Headings stay at left edge */
+}
+
+/* Ensure content after headings maintains indent */
+.section h2 + p,
+.section h2 + ul,
+.section h2 + ol,
+.section h3 + p,
+.section h3 + ul,
+.section h3 + ol,
+.section h4 + p,
+.section h4 + ul,
+.section h4 + ol {
+    padding-left: 1.5rem;   /* Maintain consistent indent after headings */
+}
+
+/* Adjust list indents after headings */
+.section h2 + ul,
+.section h2 + ol,
+.section h3 + ul,
+.section h3 + ol,
+.section h4 + ul,
+.section h4 + ol {
+    padding-left: 3.5rem;   /* Maintain consistent list indent after headings */
 }
 
 .section > *:last-child {
     margin-bottom: 0;
 }
 
-/* Heading spacing within sections */
-.section h1,
-.section h2,
-.section h3,
-.section h4,
-.section h5,
-.section h6 {
-    margin-top: 3em;  /* Space above new headings within sections */
-    margin-bottom: 1em;
+/* Section Headings */
+.section h2 {
+    color: var(--accent-color-light);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;      /* Keep bottom padding */
+    margin-bottom: 0.1rem;     /* Reduced from 0.2rem */
+    margin-top: 4rem;          /* Keep section separation */
 }
 
-/* First heading in a section shouldn't have top margin */
-.section > h1:first-child,
+.section h3,
+.section h4 {
+    color: var(--accent-color-medium);
+    padding-bottom: 0.6rem;    /* Keep bottom padding */
+    margin-bottom: 0.05rem;    /* Reduced from 0.1rem */
+    margin-top: 2.5rem;        /* Keep subsection separation */
+}
+
+/* Content immediately following headings should be very close */
+.section h2 + p,
+.section h2 + ul,
+.section h2 + ol {
+    margin-top: 0.1rem;        /* Reduced from 0.15rem */
+    margin-bottom: 1rem;
+}
+
+.section h3 + p,
+.section h3 + ul,
+.section h3 + ol,
+.section h4 + p,
+.section h4 + ul,
+.section h4 + ol {
+    margin-top: 0.05rem;       /* Reduced from 0.1rem */
+    margin-bottom: 0.8rem;
+}
+
+/* Additional visual grouping */
+.section > p + p,
+.section > ul + p,
+.section > ol + p {
+    margin-top: -0.3rem;       /* Pull consecutive content even closer */
+}
+
+/* Last paragraph in a group shouldn't have reduced margin */
+.section > p:last-child,
+.section > ul:last-child,
+.section > ol:last-child {
+    margin-bottom: 1.2rem;
+}
+
+/* First heading in section shouldn't have top margin */
 .section > h2:first-child,
 .section > h3:first-child,
 .section > h4:first-child {
     margin-top: 0;
 }
 
-/* Tighter spacing for content immediately following headings */
-.section h1 + *,
-.section h2 + *,
-.section h3 + *,
-.section h4 + * {
-    margin-top: 0.2em !important;
+/* Section Headings */
+.section h2 {
+    color: var(--accent-color-light);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.2rem;
 }
 
-/* List spacing within sections */
-.section ul,
-.section ol {
-    padding-left: 2.5em;
-    margin-bottom: 1.5em;
+.section h3,
+.section h4 {
+    color: var(--accent-color-medium);
+    margin-bottom: 1rem;
+    padding-bottom: 0.3rem;
 }
 
-.section li {
-    margin-bottom: 0.35em;
+/* Special Section Types */
+.section-questions {
+    font-family: 'Spectral', serif;
 }
 
-.section li:last-child {
-    margin-bottom: 0;
+.section-questions h2 {
+    font-weight: 600;
+    border-bottom: 1px solid var(--secondary-color);
+    margin-bottom: 0.2rem;
+    padding-bottom: 0.5rem;
 }
 
-/* Remove the previous spacing rules that were causing issues */
-h1 ~ h1,
-h2 ~ h2,
-h3 ~ h3,
-h1 + h2,
-h2 + h3,
-h3 + h4 {
-    margin-top: initial;
+.section-questions h3 {
+    font-family: 'Spectral', serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.2rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-color);
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
-/* Responsive adjustments */
+/* Content Sections (for pages like successes, failures) */
+.section-content {
+    margin-bottom: 3rem;
+}
+
+.section-content h2 {
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+/* Lineage Sections (for conceptual, workflow pages) */
+.section-lineage {
+    margin-bottom: 2rem;
+}
+
+.section-lineage h2 {
+    color: var(--primary-color);
+    border-bottom: none;
+}
+
+/* Dark Mode Overrides */
+@media (prefers-color-scheme: dark) {
+    .section {
+        background: none;
+        border: none;
+    }
+    
+    .section-questions h2 {
+        border-bottom-color: var(--border-color);
+    }
+    
+    .section-lineage h2 {
+        color: var(--secondary-color);
+    }
+}
+
+/* Mobile Adjustments */
 @media screen and (max-width: 768px) {
+    .section {
+        margin-bottom: 3rem;  /* Slightly reduced spacing on mobile */
+    }
+    
+    .section .section {
+        margin-bottom: 2rem;
+    }
+    
+    .section .section .section {
+        margin-bottom: 1.5rem;
+    }
+
     :root {
         /* Content Typography */
         --h1-size: 1.5rem;
         --h2-size: 1.25rem;
         --h3-size: 1.1rem;
         --h4-size: 1rem;
-        --body-size: 0.825rem;
-        --small-size: 0.72rem;
+        --body-size: 0.875rem;
+        --small-size: 0.75rem;
 
-        /* Navigation Typography - smaller for mobile */
-        --nav-logo-size: 1.1rem;
+        /* Navigation Typography */
+        --nav-logo-size: 1.25rem;
         --nav-item-size: 0.75rem;
         --nav-header-size: 0.675rem;
     }
+}
 
-    /* Mobile-specific navigation spacing */
-    .nav-menu li {
-        margin-bottom: 0.075rem;
-    }
+/* Mobile-specific navigation spacing */
+.nav-menu li {
+    margin-bottom: 0.075rem;
+}
 
-    .nav-menu a {
-        padding: 0.15rem 0;
-    }
+.nav-menu a {
+    padding: 0.15rem 0;
+}
 
-    .nav-header {
-        margin: 0.4rem 0 0.075rem;
-    }
+.nav-header {
+    margin: 0.4rem 0 0.075rem;
+}
 
-    .nav-group {
-        margin-left: 0.5rem;
-    }
+.nav-group {
+    margin-left: 0.5rem;
+}
 
-    .nav-divider {
-        margin: 0.35rem 0;
-    }
+.nav-divider {
+    margin: 0.35rem 0;
+}
 
-    /* Adjust logo spacing for mobile */
-    .nav-logo {
-        margin-bottom: 1.25rem;
-    }
+/* Adjust logo spacing for mobile */
+.nav-logo {
+    margin-bottom: 1.25rem;
+}
 
-    /* Tighter clustering for related items */
-    .nav-header + .nav-group {
-        margin-top: 0.05rem;
-    }
+/* Tighter clustering for related items */
+.nav-header + .nav-group {
+    margin-top: 0.05rem;
+}
 
-    .nav-group + .nav-header {
-        margin-top: 0.3rem;
-    }
+.nav-group + .nav-header {
+    margin-top: 0.3rem;
 }
 
 .container {
