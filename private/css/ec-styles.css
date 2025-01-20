@@ -10,12 +10,19 @@
     --gradient-end: rgba(79, 70, 229, 0.1);
     --border-color: rgba(0, 0, 0, 0.1);
     --header-height: 60px;
+    
+    /* Content Typography */
     --h1-size: 1.75rem;
     --h2-size: 1.35rem;
     --h3-size: 1.15rem;
     --h4-size: 1.05rem;
     --body-size: 0.9375rem;
     --small-size: 0.72rem;
+
+    /* Navigation Typography */
+    --nav-logo-size: 1.35rem;     /* Same as h2 by default */
+    --nav-item-size: 0.875rem;    /* Slightly larger than small size */
+    --nav-header-size: 0.75rem;   /* Slightly larger than small size */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -240,14 +247,53 @@ h3 + h4 {
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
     :root {
+        /* Content Typography */
         --h1-size: 1.5rem;
         --h2-size: 1.25rem;
         --h3-size: 1.1rem;
         --h4-size: 1rem;
-        /* --body-size: 0.875rem;
-        --small-size: 0.8125rem; */
         --body-size: 0.825rem;
         --small-size: 0.72rem;
+
+        /* Navigation Typography - smaller for mobile */
+        --nav-logo-size: 1.1rem;
+        --nav-item-size: 0.75rem;
+        --nav-header-size: 0.675rem;
+    }
+
+    /* Mobile-specific navigation spacing */
+    .nav-menu li {
+        margin-bottom: 0.075rem;
+    }
+
+    .nav-menu a {
+        padding: 0.15rem 0;
+    }
+
+    .nav-header {
+        margin: 0.4rem 0 0.075rem;
+    }
+
+    .nav-group {
+        margin-left: 0.5rem;
+    }
+
+    .nav-divider {
+        margin: 0.35rem 0;
+    }
+
+    /* Adjust logo spacing for mobile */
+    .nav-logo {
+        margin-bottom: 1.25rem;
+    }
+
+    /* Tighter clustering for related items */
+    .nav-header + .nav-group {
+        margin-top: 0.05rem;
+    }
+
+    .nav-group + .nav-header {
+        margin-top: 0.3rem;
     }
 }
 
@@ -287,7 +333,7 @@ h3 + h4 {
 
 .nav-logo {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: var(--h2-size);
+    font-size: var(--nav-logo-size);
     font-weight: 600;
     margin-bottom: 2rem;
     display: block;
@@ -309,7 +355,7 @@ h3 + h4 {
     padding: 0.35rem 0;
     display: block;
     transition: color 0.3s ease;
-    font-size: var(--small-size);
+    font-size: var(--nav-item-size);
 }
 
 .nav-menu a:hover,
@@ -319,14 +365,13 @@ h3 + h4 {
 
 /* Navigation Headers and Groups */
 .nav-header {
-    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
     font-weight: 600;
-    color: var(--text-color);
-    opacity: 0.7;
-    font-size: var(--small-size);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin: 0.75rem 0 0.2rem;
+    color: var(--text-color);
+    opacity: 0.5;
+    margin: 1.5rem 0 0.5rem;
 }
 
 .nav-group {
@@ -532,4 +577,17 @@ a:hover {
     border-radius: 3px;
     background: var(--primary-color);
     opacity: 0.2;
+}
+
+.nav-item {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+}
+
+.nav-item:hover {
+    opacity: 1;
 } 
