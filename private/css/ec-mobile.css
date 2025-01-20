@@ -215,8 +215,11 @@
     /* SVG Diagram Adjustments */
     .lineage-diagram {
         transform: scale(1.4);
-        transform-origin: center;
-        margin: 3rem 0;
+        transform-origin: left center;
+        margin: 3rem -1rem;
+        overflow-x: auto;
+        padding: 1rem;
+        max-width: calc(100% + 2rem);
     }
 
     .lineage-text {
