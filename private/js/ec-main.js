@@ -16,9 +16,9 @@ const navStructure = [
     // Lineages section
     { type: 'header', text: 'Lineages' },
     { type: 'group', items: [
-        { href: 'ec-foundation.html', text: 'Foundation' },
-        { href: 'ec-workflow.html', text: 'Workflow Fork' },
-        { href: 'ec-conceptual.html', text: 'Conceptual Fork' }
+        { href: 'ec-lineage-foundation.html', text: 'Foundation' },
+        { href: 'ec-lineage-workflow.html', text: 'Workflow Fork' },
+        { href: 'ec-lineage-conceptual.html', text: 'Conceptual Fork' }
     ]},
     
     // Research Artifacts
@@ -26,14 +26,14 @@ const navStructure = [
     { type: 'group', items: [
         { href: 'ec-documents-foundation.html', text: 'Foundation Documents' },
         { href: 'ec-documents-workflow.html', text: 'Workflow Documents' },
-        { href: 'ec-documents-ec-transfer.html', text: 'eC Transfer Documents' }
+        { href: 'ec-documents-transfer.html', text: 'eC Transfer Documents' }
     ]},
 
     // Results section
     { type: 'header', text: 'Results' },
     { type: 'group', items: [
-        { href: 'ec-successes.html', text: 'Notable Successes' },
-        { href: 'ec-failures.html', text: 'Notable Failures' },
+        { href: 'ec-results-successes.html', text: 'Notable Successes' },
+        { href: 'ec-results-failures.html', text: 'Notable Failures' },
         { href: 'ec-humanlike.html', text: 'Humanlike Observations' }
     ]},
     
