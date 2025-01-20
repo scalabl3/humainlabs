@@ -1,9 +1,12 @@
 // Navigation structure
 const navStructure = [
-    // Main pages
-    { type: 'link', href: 'ec-overview.html', text: 'Overview' },
-    { type: 'link', href: 'ec-saveas.html', text: 'AI.context.saveAs()' },
-    { type: 'link', href: 'ec-terminology.html', text: 'Terminology' },
+    // Research section
+    { type: 'header', text: 'Research' },
+    { type: 'group', items: [
+        { href: 'ec-overview.html', text: 'Overview' },
+        { href: 'ec-saveas.html', text: 'AI.context.saveAs()' },
+        { href: 'ec-terminology.html', text: 'Terminology' }
+    ]},
     
     // eC Development section
     { type: 'header', text: 'eC Development' },
@@ -21,8 +24,8 @@ const navStructure = [
         { href: 'ec-lineage-conceptual.html', text: 'Conceptual Fork' }
     ]},
     
-    // Research Artifacts
-    { type: 'header', text: 'Research Artifacts' },
+    // Artifacts section (renamed)
+    { type: 'header', text: 'Artifacts' },
     { type: 'group', items: [
         { href: 'ec-documents-foundation.html', text: 'Foundation Documents' },
         { href: 'ec-documents-workflow.html', text: 'Workflow Documents' },

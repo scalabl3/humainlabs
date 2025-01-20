@@ -38,20 +38,51 @@
 
             <section class="section">
                 <h2>Lineage</h2>
-                <div class="lineage-diagram">
-                    <!-- SVG diagram will be generated based on instructions -->
-                </div>
+                <svg class="lineage-diagram" viewBox="0 0 780 200">
+                    <!-- Foundation Line -->
+                    <path class="lineage-line" d="M50,100 L170,100" />
+                    <path class="lineage-line" d="M170,100 L290,100" />
+                    
+                    <!-- Branch Lines -->
+                    <path class="lineage-line" d="M290,100 L425,50" />
+                    <path class="lineage-line" d="M290,100 L425,150" />
+                    
+                    <!-- Foundation Nodes -->
+                    <a href="#c1">
+                        <circle class="lineage-node" cx="50" cy="100" r="35" />
+                        <text class="lineage-text" x="50" y="100">C1</text>
+                    </a>
+                    <a href="#c2">
+                        <circle class="lineage-node" cx="170" cy="100" r="35" />
+                        <text class="lineage-text" x="170" y="100">C2</text>
+                    </a>
+                    <a href="#c3">
+                        <circle class="lineage-node" cx="290" cy="100" r="35" />
+                        <text class="lineage-text" x="290" y="100">C3</text>
+                    </a>
+                    
+                    <!-- Branch Boxes -->
+                    <a href="ec-lineage-workflow.html">
+                        <rect class="lineage-box" x="425" y="30" width="160" height="40" rx="5" />
+                        <text class="lineage-text lineage-text-muted" x="505" y="51">Workflow Lineage</text>
+                    </a>
+                    <a href="ec-lineage-conceptual.html">
+                        <rect class="lineage-box" x="425" y="130" width="160" height="40" rx="5" />
+                        <text class="lineage-text lineage-text-muted" x="505" y="151">Conceptual Lineage</text>
+                    </a>
+                </svg>
             </section>
 
             <section class="section">
                 <h2>Highlights</h2>
+                <p> highlightsasdfasdfasdfasdf asdfasdfas asdfas asdf asdf asdf asdf a asdf asdf a</p>
                 <ol>
                     <li>C1 was first attempt at AI only coding</li>
                     <li>C2 established Workflow and then tried to create a process for making more C2's</li>
                     <li>C3 improved Workflow and established standard language for neural net description, and standard self assessments</li>
                 </ol>
 
-                <p>After C3 there is a fork of two lineages, the <a href="ec-workflow.html">Workflow</a> Lineage and the <a href="ec-conceptual.html">Conceptual</a> Lineage.</p>
+                <p>After C3 there is a fork of two lineages, the <a href="ec-lineage-workflow.html">Workflow</a> Lineage and the <a href="ec-lineage-conceptual.html">Conceptual</a> Lineage.</p>
             </section>
 
             <section class="section">
@@ -76,6 +107,7 @@
                 <h2>Claude C2</h2>
 
                 <h3>Workflow Creation</h3>
+
                 <ol>
                     <li>AI Process Guide
                         <ol>

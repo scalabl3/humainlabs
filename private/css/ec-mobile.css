@@ -84,25 +84,26 @@
     }
 
     .nav-menu li {
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.05rem;
     }
 
     .nav-menu a {
         font-size: 0.9rem;
-        padding: 0.35rem 0;
+        padding: 0.1rem 0;
     }
 
     .nav-header {
         font-size: 0.75rem;
-        margin: 1rem 0 0.25rem;
+        margin: 1.5rem 0 0.3rem;
     }
 
     .nav-group {
-        margin-left: 0.75rem;
+        margin-left: 1.2rem;
+        margin-bottom: 1rem;
     }
 
     .nav-divider {
-        margin: 0.75rem 0;
+        margin: 0.8rem 0;
     }
 
     .content {

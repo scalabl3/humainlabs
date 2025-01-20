@@ -47,7 +47,7 @@
     }
 
     .nav-menu {
-        border-top: 1px solid var(--border-color);
+        /* border-top: 1px solid var(--border-color); */
     }
 
     .section {
@@ -128,13 +128,21 @@ section p:last-of-type {
 /* List spacing */
 ul, ol {
     margin-top: 0.3em;
-    margin-bottom: 0.75em;
-    padding-left: 2.5em;
+    margin-bottom: 1.2rem;
+    padding-left: 0;  /* Remove base padding, let section rules control indentation */
 }
 
 li {
-    margin-bottom: 0.35rem;
-    line-height: 1.4;
+    margin-bottom: 0.25rem;
+    line-height: 1.6;
+}
+
+/* Nested list indentation */
+li > ul,
+li > ol {
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.6rem;  /* Updated to 1.6rem */
 }
 
 /* Reset top margin for first headings */
@@ -185,25 +193,30 @@ h1 + h2, h2 + h3, h3 + h4 {
 
 /* Section Content Spacing */
 .section > p,
-.section > ul,
-.section > ol,
 .section > pre,
 .section > blockquote {
-    padding-left: 1.5rem;      /* Keep consistent indent */
+    padding-left: 0.75rem;
 }
 
-/* Keep lists with consistent visual alignment considering their bullets/numbers */
+/* Lists in sections - single rule to control their spacing */
 .section > ul,
 .section > ol {
-    margin-bottom: 0.75em;     /* List-specific margin */
-    padding-left: 3.5rem;      /* 1.5rem section indent + 2rem for bullets */
-    margin-left: 0;
+    margin-bottom: 1.2rem;
+    padding-left: 4.5rem;  /* Increased indent for better hierarchy */
 }
 
 /* Adjust list items to align with other content */
 .section li {
-    margin-bottom: 0.35rem;
-    padding-left: 0.5rem;
+    margin-bottom: 0.25rem;
+    line-height: 1.6;
+}
+
+/* Nested lists in sections */
+.section li > ul,
+.section li > ol {
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.6rem;  /* Updated to match nested list padding */
 }
 
 /* Keep headings at the left edge for hierarchy */
@@ -214,26 +227,13 @@ h1 + h2, h2 + h3, h3 + h4 {
 }
 
 /* Ensure content after headings maintains indent */
-.section h2 + p,
-.section h2 + ul,
-.section h2 + ol,
-.section h3 + p,
-.section h3 + ul,
-.section h3 + ol,
-.section h4 + p,
-.section h4 + ul,
-.section h4 + ol {
-    padding-left: 1.5rem;   /* Maintain consistent indent after headings */
-}
-
-/* Adjust list indents after headings */
 .section h2 + ul,
 .section h2 + ol,
 .section h3 + ul,
 .section h3 + ol,
 .section h4 + ul,
 .section h4 + ol {
-    padding-left: 3.5rem;   /* Maintain consistent list indent after headings */
+    padding-left: 1.5rem;   /* Match section list padding */
 }
 
 .section > *:last-child {
@@ -402,23 +402,41 @@ h1 + h2, h2 + h3, h3 + h4 {
 
 /* Mobile-specific navigation spacing */
 .nav-menu li {
-    margin-bottom: 0.075rem;
+    margin-bottom: 0.05rem;  /* Tighter spacing */
 }
 
 .nav-menu a {
-    padding: 0.15rem 0;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.05rem 0;  /* Tighter spacing */
+    display: block;
+    transition: color 0.3s ease;
+    font-size: var(--nav-item-size);
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary-color);
 }
 
 .nav-header {
-    margin: 0.4rem 0 0.075rem;
+    margin: 1.5rem 0 0.3rem;  /* More space before headers */
 }
 
 .nav-group {
-    margin-left: 0.5rem;
+    margin-left: 1.2rem;  /* Keep same indent */
+    margin-bottom: 1rem;  /* More space after group of subitems */
+}
+
+/* Remove the nav-group + nav-header rule as we're handling spacing differently */
+.nav-group + .nav-header {
+    margin-top: 0;  /* Let the nav-header margin handle this */
 }
 
 .nav-divider {
-    margin: 0.35rem 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 0.8rem 0;  /* Keep existing spacing */
 }
 
 /* Adjust logo spacing for mobile */
@@ -429,10 +447,6 @@ h1 + h2, h2 + h3, h3 + h4 {
 /* Tighter clustering for related items */
 .nav-header + .nav-group {
     margin-top: 0.05rem;
-}
-
-.nav-group + .nav-header {
-    margin-top: 0.3rem;
 }
 
 .container {
@@ -450,6 +464,7 @@ h1 + h2, h2 + h3, h3 + h4 {
     height: 100vh;
     box-shadow: 1px 0 8px rgba(0, 0, 0, 0.1);
     z-index: 100;
+    border-top: none;  /* Remove top border */
 }
 
 .nav-menu {
@@ -485,15 +500,6 @@ h1 + h2, h2 + h3, h3 + h4 {
 
 .nav-menu li {
     margin-bottom: 0.2rem;
-}
-
-.nav-menu a {
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 0.35rem 0;
-    display: block;
-    transition: color 0.3s ease;
-    font-size: var(--nav-item-size);
 }
 
 .nav-menu a:hover,
