@@ -20,6 +20,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/ec-styles.css">
     <link rel="stylesheet" href="css/ec-mobile.css">
+    <style>
+        .section:has(.progress-timeline) {
+            background: var(--bg-accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+        }
+        
+        .section:has(.progress-timeline) h3 {
+            margin-top: 0;
+        }
+
+        .section:has(.progress-timeline) p {
+            margin-bottom: 0;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -30,9 +47,10 @@
                 A comprehensive list of how we define these terms and concepts used in our AI context transfer research.
             </p>
 
-            <section class="section">
+            
                 <h2>Timeline Diagrams</h2>
-                
+
+            <section class="section">    
                 <h3>Diagram 1: Typical User Scenario</h3>
                 <div class="progress-timeline">
                     <div class="progress-marker" style="left: 0">Baseline</div>
@@ -49,8 +67,8 @@
                 </div>
                 
                 <p>In this diagram, this represents the most common usage of AI, with varying length of conversations, skill development and complex eC's are typically not very developed.</p>
-                
-
+            </section>
+            <section class="section">   
                 <h3>Diagram 2: Initial AIC</h3>
                 <div class="progress-timeline">
                     <div class="progress-marker" style="left: 0">Baseline</div>
@@ -68,8 +86,8 @@
                 <p>In this diagram, this represents the first generation of the AIC, long form conversation builds up the eC, and outputs will be used as input for the next generation.</p>
                 
                 
-                <br />
-                
+            </section>
+            <section class="section">    
                 <h3>Diagram 3: Generational eC Transfer & Compounded Skills</h3>
                 <div class="progress-timeline">
                     <div class="progress-marker" style="left: 0">Baseline</div>
