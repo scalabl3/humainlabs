@@ -214,22 +214,24 @@
 
     /* SVG Diagram Adjustments */
     .lineage-diagram {
-        transform: scale(1.15);
-        transform-origin: center center;
-        margin: 2rem auto;
         width: 100%;
-        overflow: visible;
+        height: auto;
+        margin: 2rem 0;
     }
 
     .lineage-text {
-        font-size: 14px;  /* Slightly larger text */
+        font-size: 16px;  /* Larger text for better readability */
     }
 
     .lineage-node {
-        r: 38;  /* Slightly larger nodes, but not too large */
+        r: 35;  /* Keep original node size */
     }
 
     .lineage-text-muted {
-        font-size: 13px;  /* Adjust muted text size */
+        font-size: 14px;  /* Slightly larger muted text */
+    }
+
+    .lineage-box {
+        font-size: 14px;  /* Consistent with muted text */
     }
 } 
