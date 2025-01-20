@@ -234,4 +234,15 @@
     .lineage-box {
         font-size: 14px;  /* Consistent with muted text */
     }
+
+    /* Question Section Adjustments */
+    .section-questions {
+        margin-left: -0.5rem;  /* Pull questions slightly closer to the edge */
+    }
+    
+    .section-questions h3 {
+        padding-left: 0.5rem;  /* Add a small indent for readability */
+        line-height: 1.4;  /* Tighter line height for questions */
+        margin-bottom: 0.5rem;  /* Consistent spacing between questions */
+    }
 } 
