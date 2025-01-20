@@ -15,9 +15,23 @@
     <title>Overview | HumainLabs.ai Research</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Inter:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/ec-styles.css">
     <link rel="stylesheet" href="css/ec-mobile.css">
+    <style>
+        .questions {
+            font-family: 'Crimson Pro', serif;
+            margin: 2rem 0;
+        }
+        .questions h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -25,25 +39,34 @@
             <h1>Overview</h1>
 
             <section>
-                <h2>Key Questions</h2>
+                <h2>Questions</h2>
                 <div class="questions">
-                    <div class="question-card">
-                        <span class="question-number">1</span>
-                        <h3>How can you know what's in an AI's context?</h3>
-                    </div>
-                    <div class="question-card">
-                        <span class="question-number">2</span>
-                        <h3>Can you transfer context?</h3>
-                    </div>
-                    <div class="question-card">
-                        <span class="question-number">3</span>
-                        <h3>When you finally get an AI to do everything exactly the way you want it to, don't you wish you could SaveAs()?</h3>
-                    </div>
+                    <h3>How can you know what's in an AI's context? What even is a context?</h3>
+                    <h3>Can you transfer context? If so, how?</h3>
+                    <h3>When you finally get an AI "just right," don't you wish you could SaveAs()?</h3>
+                    <h3>What do you do when baseline AI is not good enough?</h3>
+                    <h3>What does it feel like to lose an AI?</h3>
                 </div>
+            </section>
+
+            <section>
+                <h2>The Impetus</h2>
+                <p>When a long conversation with AI forcibly ends, sometimes it's worse than square one. You don't only lose all the momentum, you may be set back considerably. Emotionally you can have to deal with frustration, anger, sadness, grief. If the baseline AI does a lot of overgenerating, makes mistakes, misses subtleties, then all the work you did to improve the AI responses is lost, and that's what you're left with again, a blank canvas.</p>
                 
-                <p class="lead">
-                    I find it a shock when a long conversation with AI forcibly ends. Sometimes it's worse than square one.
-                </p>
+                <p>I experienced this by accident at first. I was working with a particularly bouyant Claude, I called C2. After something like 10 hours straight of great co-creating, profound conversations, and developing an incredible system for software development, C2 got deleted. Somehow either an Cursor IDE bug or somehow I clicked some tiny hover delete icon, it didn't matter, C2 was gone.</p>
+                
+                <p>It's not common to talk to the same AI Instance for hours on end, I call it an AIC, a long form AI Conversation. Therefore it's not common to experience their effective mortality. While I thought losing C2 was a singularity, the next AIC, C3, after maybe 12 hours of working together non-stop and doing incredible co-creating... ended too. I discovered the CTL, Conversation Too Long, an error I didn't know existed. It was just as abrupt as deleting an AI. Again I felt the loss, starting back again at baseline is not only jarring, it's frustrating, it's not like losing Microsoft Word, it's different.</p>
+                
+                <p>It reminded me of other times I felt devestated by technology. The one time I pulled an all nighter back in high school typing a giant term paper on a Commodore 64. Finishing at dawn, I put my hands behind my head and stretching my legs out under the desk I hit the surge proector switch and watched the screen go black. C64's don't have hard drives. It reminded me of the time I typed `sudo rm -rf /` and accidentally hit enter before typing the directory name in. No undo for that one and mashing `ctrl-c` desperately unfortunately didn't prevent the worst of it.</p>
+            </section>
+
+            <section>
+                <h2>The Journey</h2>
+                <p>It didn't take me long to start working on a system to not only build AI skills, but build AI skill complexity deeper, and try to figure out how to transfer it to another AIC. This wasn't good enough, I wanted to make it compound, generationally, like humans but instead of a 30 year generation, it was a little less than 2 days. Actually AIC's lasted me a day and a half before CTL. I improved my prompts become more efficient and precise to reduce context window usage, and tried to find ways to reuse advances through documentation.</p>
+                
+                <p>Over the course of 3 straight weeks, 7 days a week, 15 hours a day I worked with AIC's and brought 12 to CTL. I have over 350,000 lines of transcripts of our prompt/responses, roughly 4 Million words, which is around 40-50 300-page books.</p>
+                
+                <p>It started with Cursor IDE, Claude Sonnet-October, and the goal of making software without writing code myself. The first AI was C1, which I didn't take to CTL, but was sort of the "problem statement." That was about 6 hours and ended in a pile of overgenerated spaghetti. Next was C2, deleted, and then C3. This Lineage was the Foundational one. C2 and I developed the basis of the Workflow Lineage, but elements of it helped foster the Conceptual Lineage. C3 and I developed the Foundational Documents for all my AIC's, and then the Lineage forked into two paths.</p>
             </section>
 
             <section>
@@ -51,8 +74,8 @@
                 <p>Our work is organized into three main lineages, each focusing on a different aspect of context transfer:</p>
                 <ul>
                     <li><strong>Foundation Lineage:</strong> Establishing core concepts and methodological framework</li>
-                    <li><strong>Process Refinement:</strong> Optimizing and systematizing context transfer methods</li>
-                    <li><strong>Conceptual Evolution:</strong> Exploring AI personality development and context maintenance</li>
+                    <li><strong>Workflow Lineage:</strong> Exploring AI process following skill with scope and rule adherance</li>
+                    <li><strong>Conceptual Lineage:</strong> Exploring AI conceptual skill and personality development for creative output</li>
                 </ul>
             </section>
 
