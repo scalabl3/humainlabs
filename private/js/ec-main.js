@@ -24,7 +24,7 @@ const navStructure = [
     // Research Artifacts
     { type: 'header', text: 'Research Artifacts' },
     { type: 'group', items: [
-        { href: 'ec-foundation-documents.html', text: 'Foundation Documents' },
+        { href: 'ec-documents-foundation.html', text: 'Foundation Documents' },
         { href: 'ec-documents-workflow.html', text: 'Workflow Documents' },
         { href: 'ec-documents-ec-transfer.html', text: 'eC Transfer Documents' }
     ]},
