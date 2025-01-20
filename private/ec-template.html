@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="css/ec-mobile.css">
     <style>
         /* Page-specific styles go here */
+        /* Note: Most styles should go in ec-styles.css */
+        /* Only add styles here that are truly unique to this page */
     </style>
 </head>
 <body>
@@ -31,9 +33,33 @@
                 [PAGE_DESCRIPTION_LEAD]
             </p>
 
-            <section>
+            <!-- Standard section example -->
+            <section class="section">
                 <h2>[SECTION_HEADING]</h2>
                 <p>[SECTION_CONTENT]</p>
+            </section>
+
+            <!-- Section with custom class example -->
+            <section class="section section-special">
+                <h2>[SPECIAL_SECTION_HEADING]</h2>
+                <p>[SPECIAL_SECTION_CONTENT]</p>
+            </section>
+
+            <!-- Section with ID example (for navigation targets) -->
+            <section id="specific-section" class="section">
+                <h2>[TARGETED_SECTION_HEADING]</h2>
+                <p>[TARGETED_SECTION_CONTENT]</p>
+            </section>
+
+            <!-- Nested sections example -->
+            <section class="section">
+                <h2>[PARENT_SECTION]</h2>
+                <p>[PARENT_CONTENT]</p>
+                
+                <section class="section">
+                    <h3>[CHILD_SECTION]</h3>
+                    <p>[CHILD_CONTENT]</p>
+                </section>
             </section>
 
         </main>
