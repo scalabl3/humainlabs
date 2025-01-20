@@ -43,7 +43,7 @@ const navStructure = [
     { type: 'group', items: [
         { href: 'ec-interpretability.html', text: 'Interpretability: Do I Fit?' },
         { href: 'ec-resume.html', text: 'Resume' },
-        { href: 'ec-about.html', text: 'Fun Facts' }
+        { href: 'ec-funfacts.html', text: 'Fun Facts' }
     ]}
 ];
 
