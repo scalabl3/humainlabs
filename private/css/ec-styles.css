@@ -1,9 +1,12 @@
-/* Base styles matching main site */
+/* ==========================================================================
+   CSS Variables
+   ========================================================================== */
 :root {
+    /* Colors */
     --primary-color: #6366f1;
     --secondary-color: #4f46e5;
-    --accent-color-light: #9b9df5;   /* brighter version of primary */
-    --accent-color-medium: #7f82f3;  /* medium bright version of primary */
+    --accent-color-light: #9b9df5;
+    --accent-color-medium: #7f82f3;
     --text-color: #1f2937;
     --bg-color: #ffffff;
     --nav-bg: rgba(255, 255, 255, 0.8);
@@ -11,9 +14,11 @@
     --gradient-start: rgba(99, 102, 241, 0.1);
     --gradient-end: rgba(79, 70, 229, 0.1);
     --border-color: rgba(0, 0, 0, 0.1);
+    
+    /* Layout */
     --header-height: 60px;
     
-    /* Content Typography */
+    /* Typography - Content */
     --h1-size: 1.75rem;
     --h2-size: 1.35rem;
     --h3-size: 1.15rem;
@@ -21,18 +26,21 @@
     --body-size: 0.9375rem;
     --small-size: 0.72rem;
 
-    /* Navigation Typography */
-    --nav-logo-size: 1.35rem;     /* Same as h2 by default */
-    --nav-item-size: 0.875rem;    /* Slightly larger than small size */
-    --nav-header-size: 0.75rem;   /* Slightly larger than small size */
+    /* Typography - Navigation */
+    --nav-logo-size: 1.35rem;
+    --nav-item-size: 0.875rem;
+    --nav-header-size: 0.75rem;
 }
 
+/* ==========================================================================
+   Dark Mode
+   ========================================================================== */
 @media (prefers-color-scheme: dark) {
     :root {
         --primary-color: #818cf8;
         --secondary-color: #6366f1;
-        --accent-color-light: #b1b8fa;   /* brighter version of dark mode primary */
-        --accent-color-medium: #99a2f9;  /* medium bright version of dark mode primary */
+        --accent-color-light: #b1b8fa;
+        --accent-color-medium: #99a2f9;
         --text-color: rgba(243, 244, 246, 0.75);
         --bg-color: #111827;
         --nav-bg: rgba(17, 24, 39, 0.8);
@@ -42,17 +50,9 @@
         --border-color: rgba(255, 255, 255, 0.1);
     }
 
-    .hamburger span {
-        background-color: var(--text-color);
-    }
-
-    .nav-menu {
-        /* border-top: 1px solid var(--border-color); */
-    }
-
     .section {
         background: none;
-        border: none;        
+        border: none;
     }
 
     .content::before {
@@ -60,6 +60,11 @@
     }
 }
 
+/* ==========================================================================
+   Base Elements
+   ========================================================================== */
+
+/* Typography */
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
@@ -74,62 +79,44 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
     line-height: 1.3;
+    margin-top: 0;
 }
 
-/* Base spacing for headings */
 h1 {
-    margin-top: 0;
-    margin-bottom: 1.5em;
     font-size: var(--h1-size);
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
+    margin-bottom: 1.5em;
 }
 
 h2 {
-    margin-top: 0;
-    margin-bottom: 1.2em;
     font-size: var(--h2-size);
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
+    margin-bottom: 1.2em;
 }
 
 h3 {
-    margin-top: 0;
-    margin-bottom: 1em;
     font-size: var(--h3-size);
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
+    margin-bottom: 1em;
 }
 
 h4, h5, h6 {
-    margin-top: 0;
-    margin-bottom: 0.8em;
     font-size: var(--h4-size);
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
+    margin-bottom: 0.8em;
 }
 
-/* Content spacing */
 p {
     margin-top: 0;
-    margin-bottom: 1.2rem;  /* Increased for better paragraph separation */
+    margin-bottom: 1.2rem;
     font-size: var(--body-size);
-    line-height: 1.6;      /* Increased for better readability */
+    line-height: 1.6;
     color: var(--text-color);
     opacity: 0.9;
-    max-width: 90ch;       /* Optimal line length for readability */
+    max-width: 90ch;
 }
 
-/* Reset margin for last paragraphs in sections */
-section p:last-of-type {
-    margin-bottom: 0;
-}
-
-/* List spacing */
+/* Lists */
 ul, ol {
     margin-top: 0.3em;
     margin-bottom: 1.2rem;
-    padding-left: 0;  /* Remove base padding, let section rules control indentation */
+    padding-left: 0;
 }
 
 li {
@@ -137,399 +124,34 @@ li {
     line-height: 1.6;
 }
 
-/* Nested list indentation */
 li > ul,
 li > ol {
     margin-top: 0.25rem;
     margin-bottom: 0.5rem;
-    padding-left: 1.6rem;  /* Updated to 1.6rem */
+    padding-left: 1.6rem;
 }
 
-/* Reset top margin for first headings */
-h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
-    margin-top: 0;
-}
-
-/* Spacing between same-level headings */
-h1 ~ h1 {
-    margin-top: 8em;
-}
-
-h2 ~ h2 {
-    margin-top: 6em;
-}
-
-h3 ~ h3 {
-    margin-top: 4em;
-}
-
-/* Content immediately following headings should be closer */
-h1 + p, h2 + p, h3 + p, h4 + p,
-h1 + ul, h2 + ul, h3 + ul, h4 + ul,
-h1 + ol, h2 + ol, h3 + ol, h4 + ol {
-    margin-top: 0.2em;
-}
-
-/* When a heading follows another heading, use tighter spacing */
-h1 + h2, h2 + h3, h3 + h4 {
-    margin-top: 2em;
-}
-
-/* Section Styles */
-.section {
-    position: relative;
-    margin-bottom: 4rem;  /* Standardized spacing */
-    margin-top: 0;
-}
-
-/* Nested sections get progressively smaller margins */
-.section .section {
-    margin-bottom: 3rem;
-}
-
-.section .section .section {
-    margin-bottom: 2rem;
-}
-
-/* Section Content Spacing */
-.section > p,
-.section > pre,
-.section > blockquote {
-    padding-left: 0.75rem;
-}
-
-/* Lists in sections - single rule to control their spacing */
-.section > ul,
-.section > ol {
-    margin-bottom: 1.2rem;
-    padding-left: 4.5rem;  /* Increased indent for better hierarchy */
-}
-
-/* Adjust list items to align with other content */
-.section li {
-    margin-bottom: 0.25rem;
-    line-height: 1.6;
-}
-
-/* Nested lists in sections */
-.section li > ul,
-.section li > ol {
-    margin-top: 0.25rem;
-    margin-bottom: 0.5rem;
-    padding-left: 1.6rem;  /* Updated to match nested list padding */
-}
-
-/* Keep headings at the left edge for hierarchy */
-.section h2,
-.section h3,
-.section h4 {
-    padding-left: 0;        /* Headings stay at left edge */
-}
-
-/* Ensure content after headings maintains indent */
-.section h2 + ul,
-.section h2 + ol,
-.section h3 + ul,
-.section h3 + ol,
-.section h4 + ul,
-.section h4 + ol {
-    padding-left: 1.5rem;   /* Match section list padding */
-}
-
-.section > *:last-child {
-    margin-bottom: 0;
-}
-
-/* Section Headings */
-.section h2 {
-    color: var(--accent-color-light);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 1rem;      /* Keep bottom padding */
-    margin-bottom: 0.1rem;     /* Reduced from 0.2rem */
-    margin-top: 4rem;          /* Keep section separation */
-}
-
-.section h3,
-.section h4 {
-    color: var(--accent-color-medium);
-    padding-bottom: 0.6rem;    /* Keep bottom padding */
-    margin-bottom: 0.05rem;    /* Reduced from 0.1rem */
-    margin-top: 2.5rem;        /* Keep subsection separation */
-}
-
-/* Content immediately following headings should be very close */
-.section h2 + p,
-.section h2 + ul,
-.section h2 + ol {
-    margin-top: 0.1rem;        /* Reduced from 0.15rem */
-    margin-bottom: 1rem;
-}
-
-.section h3 + p,
-.section h3 + ul,
-.section h3 + ol,
-.section h4 + p,
-.section h4 + ul,
-.section h4 + ol {
-    margin-top: 0.05rem;       /* Reduced from 0.1rem */
-    margin-bottom: 0.8rem;
-}
-
-/* Additional visual grouping */
-.section > p + p,
-.section > ul + p,
-.section > ol + p {
-    margin-top: -0.3rem;       /* Pull consecutive content even closer */
-}
-
-/* Last paragraph in a group shouldn't have reduced margin */
-.section > p:last-child,
-.section > ul:last-child,
-.section > ol:last-child {
-    margin-bottom: 1.2rem;
-}
-
-/* First heading in section shouldn't have top margin */
-.section > h2:first-child,
-.section > h3:first-child,
-.section > h4:first-child {
-    margin-top: 0;
-}
-
-/* Section Headings */
-.section h2 {
-    color: var(--accent-color-light);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.2rem;
-}
-
-.section h3,
-.section h4 {
-    color: var(--accent-color-medium);
-    margin-bottom: 1rem;
-    padding-bottom: 0.3rem;
-}
-
-/* Special Section Types */
-.section-questions {
-    font-family: 'Spectral', serif;
-}
-
-.section-questions h2 {
-    font-weight: 600;
-    border-bottom: 1px solid var(--secondary-color);
-    margin-bottom: 0.2rem;
-    padding-bottom: 0.5rem;
-}
-
-.section-questions h3 {
-    font-family: 'Spectral', serif;
-    font-size: 1.4rem;
-    margin-bottom: 0.2rem;
-    font-weight: 300;
-    font-style: italic;
-    color: var(--text-color);
-    line-height: 1.6;
-    opacity: 0.9;
-}
-
-/* Content Sections (for pages like successes, failures) */
-.section-content {
-    margin-bottom: 3rem;
-}
-
-.section-content h2 {
-    color: var(--text-color);
-    opacity: 0.9;
-}
-
-/* Lineage Sections (for conceptual, workflow pages) */
-.section-lineage {
-    margin-bottom: 2rem;
-}
-
-.section-lineage h2 {
+/* Links */
+a {
     color: var(--primary-color);
-    border-bottom: none;
-}
-
-/* Dark Mode Overrides */
-@media (prefers-color-scheme: dark) {
-    .section {
-        background: none;
-        border: none;
-    }
-    
-    .section-questions h2 {
-        border-bottom-color: var(--border-color);
-    }
-    
-    .section-lineage h2 {
-        color: var(--secondary-color);
-    }
-}
-
-/* Mobile Adjustments */
-@media screen and (max-width: 768px) {
-    .section {
-        margin-bottom: 3rem;  /* Slightly reduced spacing on mobile */
-    }
-    
-    .section .section {
-        margin-bottom: 2rem;
-    }
-    
-    .section .section .section {
-        margin-bottom: 1.5rem;
-    }
-
-    :root {
-        /* Content Typography */
-        --h1-size: 1.5rem;
-        --h2-size: 1.25rem;
-        --h3-size: 1.1rem;
-        --h4-size: 1rem;
-        --body-size: 0.875rem;
-        --small-size: 0.75rem;
-
-        /* Navigation Typography */
-        --nav-logo-size: 1.25rem;
-        --nav-item-size: 0.75rem;
-        --nav-header-size: 0.675rem;
-    }
-}
-
-/* Mobile-specific navigation spacing */
-.nav-menu li {
-    margin-bottom: 0.05rem;  /* Tighter spacing */
-}
-
-.nav-menu a {
-    color: var(--text-color);
     text-decoration: none;
-    padding: 0.05rem 0;  /* Tighter spacing */
-    display: block;
     transition: color 0.3s ease;
-    font-size: var(--nav-item-size);
 }
 
-.nav-menu a:hover,
-.nav-menu a.active {
-    color: var(--primary-color);
+a:hover {
+    color: var(--secondary-color);
 }
 
-.nav-header {
-    margin: 1.5rem 0 0.3rem;  /* More space before headers */
-}
-
-.nav-group {
-    margin-left: 1.2rem;  /* Keep same indent */
-    margin-bottom: 1rem;  /* More space after group of subitems */
-}
-
-/* Remove the nav-group + nav-header rule as we're handling spacing differently */
-.nav-group + .nav-header {
-    margin-top: 0;  /* Let the nav-header margin handle this */
-}
-
-.nav-divider {
-    height: 1px;
-    background: var(--border-color);
-    margin: 0.8rem 0;  /* Keep existing spacing */
-}
-
-/* Adjust logo spacing for mobile */
-.nav-logo {
-    margin-bottom: 1.25rem;
-}
-
-/* Tighter clustering for related items */
-.nav-header + .nav-group {
-    margin-top: 0.05rem;
-}
+/* ==========================================================================
+   Layout
+   ========================================================================== */
 
 .container {
     display: flex;
     min-height: 100vh;
 }
 
-/* Left Navigation */
-.left-nav {
-    width: 280px;
-    background: var(--nav-bg);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    position: fixed;
-    height: 100vh;
-    box-shadow: 1px 0 8px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-    border-top: none;  /* Remove top border */
-}
-
-.nav-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    overflow-y: auto;
-    max-height: calc(100vh - 6rem);  /* Account for logo area */
-    padding-right: 0.5rem;  /* Space for scrollbar */
-}
-
-@media screen and (max-width: 1024px) {
-    .nav-menu {
-        overflow-y: auto;
-        max-height: none;
-        padding-right: 0;
-    }
-}
-
-.nav-logo {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: var(--nav-logo-size);
-    font-weight: 600;
-    margin-bottom: 2rem;
-    display: block;
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-.nav-logo .accent {
-    color: var(--primary-color);
-}
-
-.nav-menu li {
-    margin-bottom: 0.2rem;
-}
-
-.nav-menu a:hover,
-.nav-menu a.active {
-    color: var(--primary-color);
-}
-
-/* Navigation Headers and Groups */
-.nav-header {
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-color);
-    opacity: 0.5;
-    margin: 1.5rem 0 0.5rem;
-}
-
-.nav-group {
-    margin-left: 0.75rem;
-}
-
-.nav-divider {
-    height: 1px;
-    background: var(--text-color);
-    opacity: 0.1;
-    margin: 0.5rem 0;
-}
-
-/* Main Content */
+/* Content Area */
 .content {
     margin-left: 320px;
     padding: 2rem 3rem;
@@ -558,27 +180,192 @@ h1 + h2, h2 + h3, h3 + h4 {
     background: radial-gradient(circle at 0% 50%, var(--gradient-start) 0%, transparent 70%);
 }
 
-.lead {
-    font-size: var(--h4-size);
-    color: var(--text-color);
-    opacity: 0.9;
-    max-width: 800px;
-    margin-bottom: 1.5rem;
+/* Sections */
+.section {
     position: relative;
+    margin-bottom: 4rem;
+    margin-top: 0;
 }
 
-/* Links and Buttons */
-a {
-    color: var(--primary-color);
+.section .section {
+    margin-bottom: 3rem;
+}
+
+.section .section .section {
+    margin-bottom: 2rem;
+}
+
+.section > p,
+.section > pre,
+.section > blockquote {
+    padding-left: 0;
+}
+
+.section > ul,
+.section > ol {
+    margin-bottom: 1.2rem;
+    padding-left: 4.5rem;
+}
+
+.section li > ul,
+.section li > ol {
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.6rem;
+}
+
+/* Section Headers */
+.section h2 {
+    color: var(--accent-color-light);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 0.1rem;
+    margin-top: 4rem;
+}
+
+.section h3,
+.section h4 {
+    color: var(--accent-color-medium);
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.05rem;
+    margin-top: 2.5rem;
+}
+
+/* Section Content Spacing */
+.section > p,
+.section > pre,
+.section > blockquote {
+    padding-left: 0.75rem;
+}
+
+.section > ul,
+.section > ol {
+    margin-bottom: 1.2rem;
+    padding-left: 3.5rem;
+}
+
+/* Ensure consistent list indentation regardless of position */
+.section h2 + ul,
+.section h2 + ol,
+.section h3 + ul,
+.section h3 + ol,
+.section h4 + ul,
+.section h4 + ol {
+    padding-left: 4.5rem;  /* Match section list padding */
+    margin-top: 0.05rem;
+    margin-bottom: 0.8rem;
+}
+
+/* First heading in section shouldn't have top margin */
+.section > h2:first-child,
+.section > h3:first-child,
+.section > h4:first-child {
+    margin-top: 0;
+}
+
+/* Content immediately following headings */
+.section h2 + p,
+.section h2 + ul,
+.section h2 + ol {
+    margin-top: 0.1rem;
+    margin-bottom: 1rem;
+}
+
+.section h3 + p,
+.section h3 + ul,
+.section h3 + ol,
+.section h4 + p,
+.section h4 + ul,
+.section h4 + ol {
+    margin-top: 0.05rem;
+    margin-bottom: 0.8rem;
+}
+
+/* ==========================================================================
+   Navigation (Desktop)
+   ========================================================================== */
+
+.left-nav {
+    width: 280px;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    position: fixed;
+    height: 100vh;
+    box-shadow: 1px 0 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    max-height: calc(100vh - 6rem);
+    padding-right: 0.5rem;
+}
+
+/* Nav Logo */
+.nav-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: var(--nav-logo-size);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    display: block;
+    color: var(--text-color);
     text-decoration: none;
+}
+
+.nav-logo .accent {
+    color: var(--primary-color);
+}
+
+/* Nav Items */
+.nav-menu li {
+    margin-bottom: 0.05rem;
+}
+
+.nav-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.05rem 0;
+    display: block;
     transition: color 0.3s ease;
+    font-size: var(--nav-item-size);
 }
 
-a:hover {
-    color: var(--secondary-color);
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary-color);
 }
 
-/* Timeline Diagrams */
+/* Nav Groups */
+.nav-header {
+    margin: 1.5rem 0 0.3rem;
+    font-size: var(--nav-header-size);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-color);
+    opacity: 0.5;
+}
+
+.nav-group {
+    margin-left: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.nav-divider {
+    height: 1px;
+    background: var(--border-color);
+    margin: 0.8rem 0;
+}
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+
+/* Timeline */
 .timeline {
     position: relative;
     background: var(--nav-bg);
@@ -608,53 +395,7 @@ a:hover {
     white-space: nowrap;
 }
 
-.timeline-marker::after {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 6px solid var(--primary-color);
-}
-
-.timeline-arrow {
-    position: absolute;
-    right: -10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-top: 6px solid transparent;
-    border-bottom: 6px solid transparent;
-    border-left: 10px solid var(--border-color);
-}
-
-.timeline-legend {
-    font-size: var(--small-size);
-    color: var(--text-color);
-    opacity: 0.8;
-    margin-top: 0.5rem;
-}
-
-.timeline-legend span {
-    display: inline-block;
-    margin-right: 1.5rem;
-}
-
-.timeline-legend span::before {
-    content: '';
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    margin-right: 6px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    opacity: 0.8;
-}
-
-/* Progress Bar Timeline */
+/* Progress Bar */
 .progress-timeline {
     width: 600px;
     max-width: 100%;
@@ -723,18 +464,6 @@ a:hover {
     opacity: 0.2;
 }
 
-.nav-item {
-    font-weight: 400;
-    color: var(--text-color);
-    text-decoration: none;
-    opacity: 0.75;
-    transition: opacity 0.2s ease;
-}
-
-.nav-item:hover {
-    opacity: 1;
-}
-
 /* Question Cards */
 .questions {
     display: flex;
@@ -752,53 +481,7 @@ a:hover {
     transition: all 0.3s ease;
 }
 
-.question-card:hover {
-    transform: translateX(8px);
-    border-color: var(--primary-color);
-}
-
-.question-number {
-    position: absolute;
-    left: -1px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: var(--primary-color);
-    color: white;
-    width: 3rem;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-
-.question-card h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    line-height: 1.4;
-    color: var(--text-color);
-}
-
-@media (max-width: 768px) {
-    .question-card {
-        padding: 1.25rem 1.5rem 1.25rem 3.5rem;
-    }
-    
-    .question-number {
-        width: 2.5rem;
-        height: 2.5rem;
-        font-size: 1rem;
-    }
-    
-    .question-card h3 {
-        font-size: 1.1rem;
-    }
-}
-
-/* Lineage Diagram Styles */
+/* Lineage Diagram */
 .lineage {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.2rem;
@@ -883,4 +566,13 @@ a:hover {
 
 .lineage-link:hover .lineage-text {
     opacity: 1;
+}
+
+/* Page Navigation */
+.page-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
 } 

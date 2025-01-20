@@ -1,3 +1,7 @@
+/* ==========================================================================
+   Mobile Styles (1024px and below)
+   ========================================================================== */
+
 /* Hamburger Menu */
 .hamburger {
     display: none;
@@ -22,12 +26,21 @@
     margin-bottom: 0;
 }
 
-/* Mobile Styles */
+/* Tablet and Below Layout */
 @media screen and (max-width: 1024px) {
+    /* Layout */
     .container {
         flex-direction: column;
     }
 
+    .content {
+        margin-left: 0;
+        margin-top: 80px;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    /* Navigation */
     .left-nav {
         width: 100%;
         height: auto;
@@ -41,7 +54,6 @@
     .header-container {
         display: flex;
         align-items: center;
-        /* justify-content: space-between; */
         padding: 0.5rem 0;
     }
 
@@ -60,6 +72,7 @@
         display: block;
     }
 
+    /* Mobile Menu */
     .nav-menu {
         display: none;
         width: 100%;
@@ -81,36 +94,6 @@
         display: block;
         animation: slideDown 0.3s ease forwards;
         overscroll-behavior: contain;
-    }
-
-    .nav-menu li {
-        margin-bottom: 0.05rem;
-    }
-
-    .nav-menu a {
-        font-size: 0.9rem;
-        padding: 0.1rem 0;
-    }
-
-    .nav-header {
-        font-size: 0.75rem;
-        margin: 1.5rem 0 0.3rem;
-    }
-
-    .nav-group {
-        margin-left: 1.2rem;
-        margin-bottom: 1rem;
-    }
-
-    .nav-divider {
-        margin: 0.8rem 0;
-    }
-
-    .content {
-        margin-left: 0;
-        margin-top: 80px;
-        width: 100%;
-        padding: 1rem;
     }
 
     /* Hamburger Animation */
@@ -139,32 +122,37 @@
     }
 }
 
-/* Additional Mobile Adjustments */
+/* ==========================================================================
+   Mobile Styles (768px and below)
+   ========================================================================== */
 @media screen and (max-width: 768px) {
-    h1 {
-        font-size: 1.8rem;
+    /* Typography */
+    :root {
+        --h1-size: 1.8rem;
+        --h2-size: 1.4rem;
+        --h3-size: 1.2rem;
+        --h4-size: 1rem;
+        --body-size: 0.875rem;
+        --small-size: 0.75rem;
+        --nav-logo-size: 1.25rem;
+        --nav-item-size: 0.75rem;
+        --nav-header-size: 0.675rem;
     }
 
     .lead {
         font-size: 1rem;
     }
 
-    h2 {
-        font-size: 1.4rem;
-    }
-
-    h3 {
-        font-size: 1.2rem;
-    }
-
+    /* Layout */
     .content {
         padding: 1rem;
     }
 
+    /* Progress Timeline */
     .progress-timeline {
-        max-width: 85%;  /* Slightly shorter width */
+        max-width: 85%;
         margin: 0.5rem 0;
-        margin-left: 1.5rem;  /* More indentation */
+        margin-left: 1.5rem;
     }
 
     .progress-bar {
@@ -181,7 +169,7 @@
     .progress-legend {
         font-size: 0.6rem;
         margin-top: 0.25rem;
-        margin-left: 1.5rem;  /* Match timeline indentation */
+        margin-left: 1.5rem;
         display: flex;
         flex-wrap: wrap;
         gap: 0.35rem;
@@ -194,11 +182,12 @@
     }
 
     .progress-legend-color {
-        width: 8px;  /* Even smaller color indicator */
+        width: 8px;
         height: 8px;
         margin-right: 0.15rem;
     }
 
+    /* Page Navigation */
     .page-navigation {
         margin: 2rem -1rem 0;
         padding: 1.5rem 1rem 0;
@@ -213,7 +202,7 @@
         height: 16px;
     }
 
-    /* SVG Diagram Adjustments */
+    /* SVG Diagrams */
     .lineage-diagram {
         width: 100%;
         height: auto;
@@ -221,29 +210,29 @@
     }
 
     .lineage-text {
-        font-size: 16px;  /* Larger text for better readability */
+        font-size: 16px;
     }
 
     .lineage-node {
-        r: 35;  /* Keep original node size */
+        r: 35;
     }
 
     .lineage-text-muted {
-        font-size: 14px;  /* Slightly larger muted text */
+        font-size: 14px;
     }
 
     .lineage-box {
-        font-size: 14px;  /* Consistent with muted text */
+        font-size: 14px;
     }
 
-    /* Question Section Adjustments */
+    /* Question Cards */
     .section-questions {
-        margin-left: -0.5rem;  /* Pull questions slightly closer to the edge */
+        margin-left: -0.5rem;
     }
     
     .section-questions h3 {
-        padding-left: 0.5rem;  /* Add a small indent for readability */
-        line-height: 1.4;  /* Tighter line height for questions */
-        margin-bottom: 0.5rem;  /* Consistent spacing between questions */
+        padding-left: 0.5rem;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
     }
 } 
