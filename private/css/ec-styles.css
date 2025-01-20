@@ -21,9 +21,9 @@
     /* Typography - Content */
     --h1-size: 1.75rem;
     --h2-size: 1.35rem;
-    --h3-size: 1.15rem;
-    --h4-size: 1.05rem;
-    --body-size: 0.9375rem;
+    --h3-size: 1.0rem;
+    --h4-size: 0.95rem;
+    --body-size: 0.91rem;
     --small-size: 0.72rem;
 
     /* Typography - Navigation */
@@ -218,8 +218,8 @@ a:hover {
 .section h2 {
     color: var(--accent-color-light);
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 1rem;
-    margin-bottom: 0.1rem;
+    padding-bottom: 0.2rem;
+    margin-bottom: 1rem;
     margin-top: 4rem;
 }
 
@@ -235,7 +235,7 @@ a:hover {
 .section > p,
 .section > pre,
 .section > blockquote {
-    padding-left: 0.75rem;
+    padding-left: 0rem;
 }
 
 .section > ul,
@@ -251,9 +251,10 @@ a:hover {
 .section h3 + ol,
 .section h4 + ul,
 .section h4 + ol {
-    padding-left: 3.5rem;  /* Match section list padding */
+    padding-left: 2.5rem;  /* Match section list padding */
     margin-top: 0.05rem;
     margin-bottom: 0.8rem;
+    
 }
 
 /* First heading in section shouldn't have top margin */
@@ -262,6 +263,8 @@ a:hover {
 .section > h4:first-child {
     margin-top: 0;
 }
+
+
 
 /* Content immediately following headings */
 .section h2 + p,
@@ -280,6 +283,11 @@ a:hover {
     margin-top: 0.05rem;
     margin-bottom: 0.8rem;
 }
+
+/* .section h3 p,
+.section h4 p {
+    margin-left: 0.6rem;
+} */
 
 /* ==========================================================================
    Navigation (Desktop)
