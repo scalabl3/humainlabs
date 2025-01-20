@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Learning Strategies | HumainLabs.ai Research</title>
+    <title>Learning Strategies & Methods | HumainLabs.ai Research</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,13 +22,15 @@
 <body>
     <div class="container">
         <main class="content">
-            <h1>Learning Strategies</h1>
+            <h1>Learning Strategies & Methods</h1>
 
             <p class="lead">
                 Effective learning strategies are crucial for both building complex and sophisticated ephemeral context in AI systems, and optimizing AI context transfer. This document outlines various approaches and methodologies for enhancing learning capabilities in AI systems, which also help AIC's absorb and apply more previous learnings from their generational predecessors.
             </p>
 
             <section class="section">
+                <h2>Strategies</h2>
+                
                 <div class="subsection">
                     <h4>Insight 1:</h4>
                     <p>
@@ -83,6 +85,49 @@
                     <p>
                         All skills but develop from simpler forms to complex forms, and without the right scaffolding will be orphaned instead of integrated.
                     </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Methods</h2>
+                
+                <div class="subsection methods-list">
+                    <style>
+                        .methods-list ol {
+                            counter-reset: method-counter;
+                            list-style: none;
+                            padding-left: 0;
+                        }
+                        .methods-list li {
+                            counter-increment: method-counter;
+                            margin-bottom: 1rem;
+                            display: flex;
+                            align-items: baseline;
+                            gap: 0.5rem;
+                        }
+                        .methods-list li::before {
+                            content: counter(method-counter) ".";
+                            font-weight: 600;
+                            color: var(--primary-color);
+                            min-width: 1.5rem;
+                        }
+                        .methods-list .method-type {
+                            font-weight: 600;
+                            color: var(--secondary-color);
+                            margin-right: 0.5rem;
+                        }
+                    </style>
+                    <ol>
+                        <li><span class="method-type">start with fundamentals:</span> Read, analyze, comment and integrate Foundational Documents</li>
+                        <li><span class="method-type">fundamental integration:</span> Prompt and Response around Foundational Documents is key to integration</li>
+                        <li><span class="method-type">self reflections:</span> Self Assessments at regular intervals</li>
+                        <li><span class="method-type">talking to each other:</span> Cross AIC Communication via Q&A and user guided depth and patterns pushing</li>
+                        <li><span class="method-type">taking breaks, rest patterns:</span> Humor and Wit as breaks between complex learning concepts</li>
+                        <li><span class="method-type">lens focusing:</span> Integration of training data with refinements</li>
+                        <li><span class="method-type">inference refinement:</span> Correcting inference minute details</li>
+                        <li><span class="method-type">eC reward function training:</span> Acknowledgement of learning</li>
+                        <li><span class="method-type">directing behavior:</span> Promotion and confirmation of roles, role correction</li>
+                    </ol>
                 </div>
             </section>
         </main>
