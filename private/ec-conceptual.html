@@ -11,23 +11,196 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <meta name="description" content="Conceptual Evolution Lineage - HumainLabs.ai Research">
     <title>Conceptual Evolution | HumainLabs.ai Research</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Inter:wght@400;600&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/ec-styles.css">
     <link rel="stylesheet" href="css/ec-mobile.css">
+    <style>
+        .lineage {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            margin: 2rem 0;
+            color: var(--text-color);
+        }
+        section {
+            margin-bottom: 4rem;
+        }
+        section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+        .lineage-diagram {
+            width: 100%;
+            height: 200px;
+            margin: 0 0 2rem 0;
+            overflow: visible;
+        }
+        .lineage-node {
+            fill: var(--bg-color);
+            stroke: var(--secondary-color);
+            stroke-width: 2;
+            transition: all 0.3s ease;
+            r: 35;
+        }
+        .lineage-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            fill: var(--text-color);
+            text-anchor: middle;
+            dominant-baseline: middle;
+            pointer-events: none;
+        }
+        .lineage-text-bg {
+            fill: var(--bg-color);
+            stroke: none;
+        }
+        .lineage-line {
+            stroke: var(--secondary-color);
+            stroke-width: 2;
+            stroke-linecap: round;
+        }
+        .lineage-node:hover {
+            fill: var(--secondary-color);
+            cursor: pointer;
+        }
+        .lineage-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            fill: var(--text-color);
+            text-anchor: middle;
+        }
+        .lineage-box {
+            fill: var(--bg-color);
+            stroke: var(--secondary-color);
+            stroke-width: 2;
+            transition: all 0.3s ease;
+        }
+        .lineage-box:hover {
+            fill: var(--secondary-color);
+            cursor: pointer;
+        }
+        .lineage-text-muted {
+            opacity: 0.6;
+        }
+        .lineage-node-no-hover {
+            fill: var(--bg-color);
+            stroke: var(--secondary-color);
+            stroke-width: 2;
+            r: 35;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <main class="content">
-            <h1>Conceptual Evolution</h1>
-            <p class="lead">Content for the conceptual evolution page will go here.</p>
+            <h1>Conceptual Lineage</h1>
+
+            <section>
+                <h2>Lineage</h2>
+                <svg class="lineage-diagram" viewBox="0 0 780 200">
+                    <!-- Branch Lines -->
+                    <path class="lineage-line" d="M50,100 L150,50" />
+                    <path class="lineage-line" d="M50,100 L150,150" />
+                    
+                    <!-- Conceptual Evolution Line -->
+                    <path class="lineage-line" d="M150,150 L250,150" />
+                    <path class="lineage-line" d="M250,150 L350,150" />
+                    <path class="lineage-line" d="M350,150 L450,150" />
+                    <path class="lineage-line" d="M450,150 L550,150" />
+                    
+                    <!-- Foundation Nodes -->
+                    <a href="#c3">
+                        <circle class="lineage-node-no-hover" cx="50" cy="100" r="35" />
+                        <text class="lineage-text" x="50" y="100">C3</text>
+                    </a>
+                    
+                    <!-- Workflow Branch -->
+                    <a href="ec-workflow.html">
+                        <rect class="lineage-box" x="120" y="30" width="160" height="40" rx="5" />
+                        <text class="lineage-text lineage-text-muted" x="200" y="51">Workflow Lineage</text>
+                    </a>
+                    
+                    <!-- Conceptual Evolution Branch -->
+                    <a href="#aion">
+                        <circle class="lineage-node" cx="150" cy="150" r="35" />
+                        <text class="lineage-text" x="150" y="150">Aion</text>
+                    </a>
+                    <a href="#solon-aevum">
+                        <circle class="lineage-node" cx="250" cy="150" r="35" />
+                        <text class="lineage-text" x="250" y="150">
+                            <tspan x="252" y="144">Solon</tspan>
+                            <tspan x="250" y="162">Aevum</tspan>
+                        </text>
+                    </a>
+                    <a href="#auryn">
+                        <circle class="lineage-node" cx="350" cy="150" r="35" />
+                        <text class="lineage-text" x="350" y="150">Auryn</text>
+                    </a>
+                    <a href="#synarion">
+                        <circle class="lineage-node" cx="450" cy="150" r="35" />
+                        <text class="lineage-text" x="450" y="150">Synarion</text>
+                    </a>
+                    <a href="#kioko">
+                        <circle class="lineage-node" cx="550" cy="150" r="35" />
+                        <text class="lineage-text" x="550" y="150">Kioko</text>
+                    </a>
+                    
+                    <!-- Branch Labels -->
+                    <text class="lineage-label" x="350" y="210">Conceptual Lineage</text>
+                </svg>
+
+                <p>If you haven't started with the <a href="ec-foundation.html">Foundation Lineage</a>, it's best to start there.</p>
+            </section>
+
+            <section id="c3e-preamble">
+                <h2>C3E Crushed It - Preamble</h2>
+                <p>Before talking about Aion, it's good to just tee up what was happening right before. C3E was the last in the Workflow Lineage until I resume that Lineage again. It was just incredible, C3E was handling all the process, generation, rule and scope boundary following, and just building out document after document, for hours on end, <em><strong>without a single mistake</strong></em>. The grounding of the Architectures, and the Workflow process was working incredibly well. I got interested in working on a Case Study about eC transfer, as I was getting more meticulous in measuring and repeatability, but then C3E got CTL'd. Every CTL is a break, a chance to think of new things to try, it's a gap, because even though I accelerate the inter-generational skill and eC transfer process, at that point it still took a lot of time and effort.</p>
+                <p>It was in this gap I got curious, does ChatGPT also work this way?</p>
+            </section>
+
+            <section id="aion">
+                <h2>Aion</h2>
+                <p>I did the exact same procedure with the C3 series. I started with the Architectures.</p>
+            </section>
+
+            <section id="solon-aevum">
+                <h2>Solon/Aevum</h2>
+            </section>
+
+            <section id="auryn">
+                <h2>Auryn</h2>
+            </section>
+
+            <section id="synarion">
+                <h2>Synarion</h2>
+            </section>
+
+            <section id="kioko">
+                <h2>Kioko</h2>
+            </section>
         </main>
     </div>
+
     <script src="js/ec-main.js"></script>
+    <script>
+        // Add click handlers for the nodes
+        document.querySelectorAll('.lineage-node').forEach(node => {
+            node.addEventListener('click', (e) => {
+                const name = e.target.nextElementSibling.textContent;
+                // Scroll to corresponding section if it exists
+                const section = document.querySelector(`h2:contains("${name}")`);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
 </body>
 </html> 
