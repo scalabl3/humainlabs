@@ -9,4 +9,5 @@ node_modules/
 Materials/
 Materials/**/*
 .specstory/
-.specstory/**/* 
+.specstory/**/*
+*.zip 
