@@ -35,10 +35,10 @@ const navStructure = [
     // Results section
     { type: 'header', text: 'Results' },
     { type: 'group', items: [
-        { href: 'ec-results-conclusions.html', text: 'Conclusions' },
         { href: 'ec-results-successes.html', text: 'Notable Successes' },
         { href: 'ec-results-failures.html', text: 'Notable Failures' },
-        { href: 'ec-humanlike.html', text: 'Humanlike Observations' }
+        { href: 'ec-humanlike.html', text: 'Humanlike Observations' },
+        { href: 'ec-results-conclusions.html', text: 'Conclusions' }
     ]},
     
     // Personal section
