@@ -273,4 +273,28 @@ function addCacheBuster() {
 }
 
 // Call it when the page loads
-document.addEventListener('DOMContentLoaded', addCacheBuster); 
+document.addEventListener('DOMContentLoaded', addCacheBuster);
+
+// Scroll depth tracking for GA4
+let scrollMarks = new Set();
+
+function calculateScrollPercentage() {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight - windowHeight;
+    const scrolled = window.scrollY;
+    return Math.round((scrolled / documentHeight) * 100);
+}
+
+window.addEventListener('scroll', function() {
+    const scrollPercentage = calculateScrollPercentage();
+    
+    [25, 50, 75, 100].forEach(mark => {
+        if (scrollPercentage >= mark && !scrollMarks.has(mark)) {
+            scrollMarks.add(mark);
+            gtag('event', 'scroll_milestone', {
+                'depth': mark,
+                'page': window.location.pathname
+            });
+        }
+    });
+}, { passive: true }); 
