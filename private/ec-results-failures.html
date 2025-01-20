@@ -14,6 +14,9 @@
     <meta name="description" content="Analysis of notable failures and lessons learned in context transfer research at HumainLabs.ai">
     <meta name="keywords" content="research failures, context transfer, AI research, machine learning challenges">
     <meta name="author" content="HumainLabs.ai Research">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     
     <title>Notable Failures | HumainLabs.ai Research</title>
     
@@ -49,5 +52,14 @@
 
     <!-- Scripts -->
     <script src="js/ec-main.js"></script>
+    <script>
+        // Add cache busting for development
+        document.addEventListener('DOMContentLoaded', () => {
+            const timestamp = new Date().getTime();
+            document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+                link.href = link.href.split('?')[0] + '?v=' + timestamp;
+            });
+        });
+    </script>
 </body>
 </html> 

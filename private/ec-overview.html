@@ -11,7 +11,10 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Research overview exploring AI context transfer and development - HumainLabs.ai Research">
+    <meta name="description" content="Overview of the Evolving Context research project - HumainLabs.ai Research">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Overview | HumainLabs.ai Research</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -199,5 +202,14 @@
     </div>
 
     <script src="js/ec-main.js"></script>
+    <script>
+        // Add cache busting for development
+        document.addEventListener('DOMContentLoaded', () => {
+            const timestamp = new Date().getTime();
+            document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+                link.href = link.href.split('?')[0] + '?v=' + timestamp;
+            });
+        });
+    </script>
 </body>
 </html> 

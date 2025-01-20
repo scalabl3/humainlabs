@@ -11,12 +11,15 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Notable successes and breakthroughs in context transfer research at HumainLabs.ai">
+    <meta name="description" content="Analysis of successes and breakthroughs - HumainLabs.ai Research">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta name="keywords" content="AI research, context transfer, breakthroughs, HumainLabs.ai">
     <meta name="author" content="HumainLabs.ai">
     <meta name="robots" content="index, follow">
     
-    <title>Notable Successes | HumainLabs.ai Research</title>
+    <title>Results: Successes | HumainLabs.ai Research</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -55,5 +58,14 @@
 
     <!-- Scripts -->
     <script src="js/ec-main.js"></script>
+    <script>
+        // Add cache busting for development
+        document.addEventListener('DOMContentLoaded', () => {
+            const timestamp = new Date().getTime();
+            document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+                link.href = link.href.split('?')[0] + '?v=' + timestamp;
+            });
+        });
+    </script>
 </body>
 </html> 
