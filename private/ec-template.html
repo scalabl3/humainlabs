@@ -69,5 +69,14 @@
     </div>
 
     <script src="js/ec-main.js"></script>
+    <script>
+        // Add cache busting for development
+        document.addEventListener('DOMContentLoaded', () => {
+            const timestamp = new Date().getTime();
+            document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+                link.href = link.href.split('?')[0] + '?v=' + timestamp;
+            });
+        });
+    </script>
 </body>
 </html> 
