@@ -162,7 +162,8 @@ h1 + h2, h2 + h3, h3 + h4 {
 /* Section and heading hierarchy */
 .section {
     position: relative;
-    margin-bottom: 6em;  /* Large gap between major sections */
+    margin-bottom: 5em;  /* Large gap between major sections */
+    margin-top: 2em;
 }
 
 /* Primary sections (containing h1) */
