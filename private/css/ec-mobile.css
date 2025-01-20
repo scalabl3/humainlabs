@@ -214,12 +214,11 @@
 
     /* SVG Diagram Adjustments */
     .lineage-diagram {
-        transform: scale(1.4);
-        transform-origin: left center;
-        margin: 3rem -1rem;
-        overflow-x: auto;
-        padding: 1rem;
-        max-width: calc(100% + 2rem);
+        transform: scale(1.15);
+        transform-origin: center center;
+        margin: 2rem auto;
+        width: 100%;
+        overflow: visible;
     }
 
     .lineage-text {
@@ -227,7 +226,7 @@
     }
 
     .lineage-node {
-        r: 40;  /* Slightly larger nodes */
+        r: 38;  /* Slightly larger nodes, but not too large */
     }
 
     .lineage-text-muted {
