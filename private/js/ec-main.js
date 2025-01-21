@@ -1,11 +1,18 @@
 // Navigation structure
 const navStructure = [
+    // About section
+    { type: 'header', text: 'About' },
+    { type: 'group', items: [
+        { href: 'ec-about-interpretability.html', text: 'Interpretability: Do I Fit?' },
+        { href: 'ec-about-resume.html', text: 'Resume' }
+    ]},
+
     // Research section
     { type: 'header', text: 'Research' },
     { type: 'group', items: [
         { href: 'ec-overview.html', text: 'Overview' },
-        { href: 'ec-saveas.html', text: 'AI.context.saveAs()' },
-        { href: 'ec-terminology.html', text: 'Terminology' }
+        { href: 'ec-research-saveas.html', text: 'AI.context.saveAs()' },
+        { href: 'ec-research-terminology.html', text: 'Terminology' }
     ]},
     
     // eC Development section
@@ -24,7 +31,7 @@ const navStructure = [
         { href: 'ec-lineage-conceptual.html', text: 'Conceptual Fork' }
     ]},
     
-    // Artifacts section (renamed)
+    // Artifacts section
     { type: 'header', text: 'Artifacts' },
     { type: 'group', items: [
         { href: 'ec-documents-foundation.html', text: 'Foundation Documents' },
@@ -37,16 +44,14 @@ const navStructure = [
     { type: 'group', items: [
         { href: 'ec-results-successes.html', text: 'Notable Successes' },
         { href: 'ec-results-failures.html', text: 'Notable Failures' },
-        { href: 'ec-humanlike.html', text: 'Humanlike Observations' },
+        { href: 'ec-results-humanlike.html', text: 'Humanlike Observations' },
         { href: 'ec-results-conclusions.html', text: 'Conclusions' }
     ]},
     
-    // Personal section
+    // Misc section (renamed from About)
     { type: 'divider' },
-    { type: 'header', text: 'About' },
+    { type: 'header', text: 'Misc' },
     { type: 'group', items: [
-        { href: 'ec-interpretability.html', text: 'Interpretability: Do I Fit?' },
-        { href: 'ec-resume.html', text: 'Resume' },
         { href: 'ec-funfacts.html', text: 'Fun Facts' }
     ]}
 ];
