@@ -45,7 +45,8 @@ const navStructure = [
         { href: 'ec-results-successes.html', text: 'Notable Successes' },
         { href: 'ec-results-failures.html', text: 'Notable Failures' },
         { href: 'ec-results-humanlike.html', text: 'Humanlike Observations' },
-        { href: 'ec-results-conclusions.html', text: 'Conclusions' }
+        { href: 'ec-results-conclusions.html', text: 'Conclusions' },
+        { href: 'ec-results-further-research.html', text: 'Further Research' }
     ]},
     
     // Misc section (renamed from About)
