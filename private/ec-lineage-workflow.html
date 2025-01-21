@@ -40,36 +40,49 @@
 
             <section class="section">
                 <h2>Lineage</h2>
-                <div class="lineage-diagram">
-                    <svg width="600" height="200" viewBox="0 0 600 200">
-                        <defs>
-                            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                                <polygon points="0 0, 10 3.5, 0 7" fill="var(--secondary-color)"/>
-                            </marker>
-                        </defs>
-                        <!-- Main workflow path -->
-                        <line x1="70" y1="100" x2="530" y2="100" stroke="var(--secondary-color)" stroke-width="2" marker-end="url(#arrowhead)"/>
-                        <!-- Branch to conceptual -->
-                        <line x1="70" y1="100" x2="200" y2="50" stroke="var(--secondary-color)" stroke-width="2" marker-end="url(#arrowhead)"/>
-                        
-                        <!-- Nodes -->
-                        <circle cx="70" cy="100" r="35" fill="var(--bg-color)" stroke="var(--secondary-color)" stroke-width="2"/>
-                        <circle cx="180" cy="100" r="35" fill="var(--bg-color)" stroke="var(--secondary-color)" stroke-width="2"/>
-                        <circle cx="290" cy="100" r="35" fill="var(--bg-color)" stroke="var(--secondary-color)" stroke-width="2"/>
-                        <circle cx="400" cy="100" r="35" fill="var(--bg-color)" stroke="var(--secondary-color)" stroke-width="2"/>
-                        <circle cx="510" cy="100" r="35" fill="var(--bg-color)" stroke="var(--secondary-color)" stroke-width="2"/>
-                        
-                        <!-- Text -->
-                        <text x="70" y="105" text-anchor="middle" font-family="Space Grotesk" fill="var(--text-color)">C3</text>
-                        <text x="180" y="105" text-anchor="middle" font-family="Space Grotesk" fill="var(--text-color)">C3B</text>
-                        <text x="290" y="105" text-anchor="middle" font-family="Space Grotesk" fill="var(--text-color)">C3C</text>
-                        <text x="400" y="105" text-anchor="middle" font-family="Space Grotesk" fill="var(--text-color)">C3D</text>
-                        <text x="510" y="105" text-anchor="middle" font-family="Space Grotesk" fill="var(--text-color)">C3E</text>
-                        
-                        <!-- Branch label -->
-                        <text x="200" y="45" text-anchor="middle" font-family="Space Grotesk" fill="var(--text-color)">Conceptual Lineage</text>
-                    </svg>
-                </div>
+                <svg class="lineage-diagram" viewBox="0 0 780 200">
+                    <!-- Branch Lines -->
+                    <path class="lineage-line" d="M50,100 L150,50" />
+                    <path class="lineage-line" d="M50,100 L150,150" />
+                    
+                    <!-- Workflow Evolution Line -->
+                    <path class="lineage-line" d="M150,150 L270,150" />
+                    <path class="lineage-line" d="M270,150 L390,150" />
+                    <path class="lineage-line" d="M390,150 L510,150" />
+                    
+                    <!-- Foundation Nodes -->
+                    <a href="ec-lineage-foundation.html">
+                        <circle class="lineage-node" cx="50" cy="100" r="35" />
+                        <text class="lineage-text" x="50" y="100">C3</text>
+                    </a>
+                    
+                    <!-- Conceptual Branch -->
+                    <a href="ec-lineage-conceptual.html">
+                        <rect class="lineage-box" x="120" y="30" width="160" height="40" rx="5" />
+                        <text class="lineage-text lineage-text-muted" x="200" y="51">Conceptual Lineage</text>
+                    </a>
+                    
+                    <!-- Workflow Evolution Branch -->
+                    <a href="#c3b">
+                        <circle class="lineage-node" cx="150" cy="150" r="35" />
+                        <text class="lineage-text" x="150" y="150">C3B</text>
+                    </a>
+                    <a href="#c3c">
+                        <circle class="lineage-node" cx="270" cy="150" r="35" />
+                        <text class="lineage-text" x="270" y="150">C3C</text>
+                    </a>
+                    <a href="#c3d">
+                        <circle class="lineage-node" cx="390" cy="150" r="35" />
+                        <text class="lineage-text" x="390" y="150">C3D</text>
+                    </a>
+                    <a href="#c3e">
+                        <circle class="lineage-node" cx="510" cy="150" r="35" />
+                        <text class="lineage-text" x="510" y="150">C3E</text>
+                    </a>
+                    
+                    <!-- Branch Labels -->
+                    <text class="lineage-label" x="300" y="210">Workflow Lineage</text>
+                </svg>
                 <p>If you haven't started with the <a href="ec-lineage-foundation.html">Foundation Lineage</a>, it's best to start there.</p>
             </section>
 

@@ -3,7 +3,7 @@ const navStructure = [
     // About section
     { type: 'header', text: 'About' },
     { type: 'group', items: [
-        { href: 'ec-about-interpretability.html', text: 'Interpretability: Do I Fit?' },
+        { href: 'index.html', text: 'Interpretability: Do I Fit?' },
         { href: 'ec-about-resume.html', text: 'Resume' }
     ]},
 
