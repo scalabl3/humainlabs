@@ -1,0 +1,33 @@
+# Site settings
+title: HumainLabs.ai Research
+description: Research in AI Context Transfer and Interpretability
+url: "https://humainlabs.ai"
+
+# Build settings
+permalink: pretty
+include: [".htaccess", ".nojekyll"]
+exclude: ["Materials/", "README.md", "LICENSE"]
+
+# Default settings
+defaults:
+  -
+    scope:
+      path: "" # All files in the project
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "private"
+    values:
+      layout: "default"
+      
+# GitHub Pages settings
+lsi: false
+safe: true
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge 
