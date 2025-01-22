@@ -7,7 +7,7 @@
     --secondary-color: #4f46e5;
     --accent-color-light: #9b9df5;
     --accent-color-medium: #7f82f3;
-    --accent-color-medium-90: rgba(195, 197, 255, 0.8);  
+    
     --text-color: #1f2937;
     --text-color-bright: #000000;
     --bg-color: #ffffff;
@@ -43,8 +43,10 @@
         --secondary-color: #6366f1;
         --accent-color-light: #b1b8fa;
         --accent-color-medium: #99a2f9;
+        --accent-color-medium-90: rgba(195, 197, 255, 0.8);  
         --text-color: rgba(243, 244, 246, 0.75);
         --text-color-bright: rgba(243, 244, 246, 0.95);
+
         --bg-color: #111827;
         --nav-bg: rgba(17, 24, 39, 0.8);
         --card-bg: rgba(31, 41, 55, 0.9);
