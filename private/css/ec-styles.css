@@ -583,4 +583,22 @@ a:hover {
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid var(--border-color);
+}
+
+/* Lead paragraph */
+p.lead {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    max-width: 65ch;
+}
+
+code {
+    background: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: monospace;
+    color: var(--accent-color-medium);
 } 

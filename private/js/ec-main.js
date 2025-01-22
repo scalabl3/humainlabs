@@ -307,4 +307,119 @@ window.addEventListener('scroll', function() {
             });
         }
     });
-}, { passive: true }); 
+}, { passive: true });
+
+// Term definitions hover functionality
+const termDefinitions = {
+    // Core Concepts
+    'AIC': 'Long AI Conversation',
+    'CTL': 'Conversation Too Long - AI session termination due to length',
+    'eC': 'Ephemeral Context - vector tokens for AI',
+    
+    // Instance Names - Foundation
+    'C1': 'Foundation Lineage - AIC #1',
+    'C2': 'Foundation Lineage - AIC #2',
+    'C3': 'Foundation Lineage - AIC #3 - Language Architect',
+    
+    // Instance Names - Workflow
+    'C3B': 'Workflow Lineage - AIC #4',
+    'C3C': 'Workflow Lineage - AIC #5',
+    'C3D': 'Workflow Lineage - AIC #6',
+    'C3E': 'Workflow Lineage - AIC #7',
+    
+    // Instance Names - Conceptual
+    'Aion': 'Conceptual Lineage AIC #1',
+    'Solon': 'Conceptual Lineage AIC #2',
+    'Aevum': 'Conceptual Lineage AIC #2',
+    'Auryn': 'Conceptual Lineage AIC #3',
+    'Synarion': 'Conceptual Lineage AIC #4',
+    'Kioko': 'Conceptual Lineage AIC #5'
+};
+
+class TermHighlighter {
+    constructor() {
+        this.init();
+        this.highlightTerms();
+    }
+
+    init() {
+        // Add styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .term-highlight {
+                cursor: help;
+                border-bottom: 1px dotted var(--accent-color-light);
+                transition: all 0.2s ease;
+                position: relative;
+            }
+            .term-highlight:hover {
+                background: var(--card-bg);
+                padding: 0 0.2rem;
+                border-radius: 2px;
+                border-bottom-color: var(--accent-color-light);
+            }
+            .term-highlight::after {
+                content: attr(aria-label);
+                display: none;
+                position: absolute;
+                left: 60%;
+                transform: translateX(0);
+                bottom: -25px;
+                padding: 1px 4px;
+                white-space: nowrap;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+                font-size: 11px;
+                line-height: 1.3;
+                color: #f5f5f5;
+                background: #303030;
+                border: 1px solid #505050;
+                box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+            }
+            .term-highlight:hover::after {
+                display: block;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    highlightTerms() {
+        const elements = document.querySelectorAll('p, li');
+        elements.forEach(element => {
+            let html = element.innerHTML;
+            Object.entries(termDefinitions).forEach(([term, definition]) => {
+                // Only match whole words
+                const regex = new RegExp(`\\b${term}\\b`, 'g');
+                html = html.replace(regex, `<span class="term-highlight" aria-label="${definition}">$&</span>`);
+            });
+            element.innerHTML = html;
+        });
+    }
+
+    removeHighlights() {
+        document.querySelectorAll('.term-highlight').forEach(el => {
+            const text = el.textContent;
+            el.outerHTML = text;
+        });
+    }
+
+    // Admin toggle via console: window.termHighlighter.toggle()
+    toggle() {
+        if (document.querySelector('.term-highlight')) {
+            this.removeHighlights();
+        } else {
+            this.highlightTerms();
+        }
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    window.termHighlighter = new TermHighlighter();
+    
+    // Add cache busting for development
+    const timestamp = new Date().getTime();
+    document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+        link.href = link.href.split('?')[0] + '?v=' + timestamp;
+    });
+}); 
