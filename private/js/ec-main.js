@@ -8,7 +8,7 @@ const navStructure = [
     ]},
 
     // Research section
-    { type: 'header', text: 'Research' },
+    { type: 'header', text: 'My Research' },
     { type: 'group', items: [
         { href: 'ec-overview.html', text: 'Overview' },
         { href: 'ec-research-saveas.html', text: 'AI.context.saveAs()' },
