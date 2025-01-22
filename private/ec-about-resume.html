@@ -22,7 +22,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Inter:wght@400;600&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Inter:wght@400;600&family=Spectral:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/ec-styles.css">
     <link rel="stylesheet" href="css/ec-mobile.css">
@@ -46,14 +46,31 @@
         }
         
         .role-description {
-            font-style: italic;
+            /* font-family: 'Spectral', serif; */
+            
             margin: 1rem 0;
-            color: var(--text-color-light);
+            font-size: 1.01rem;
+            font-weight: 200;
+            color: var(--text-color-bright);
+            padding-left: 0.75rem;
+            border-left: 4px solid var(--card-bg);
+            padding-bottom: 1rem;    
         }
         
+        .reflection {
+            /* font-family: 'Spectral', serif; */
+            font-size: 1.01rem;
+            font-weight: 200;
+            margin: 1.5rem 0;
+            padding-left: 0.75rem;
+            color: var(--text-color-bright);
+            border-left: 4px solid var(--card-bg);            
+        }
+
         .achievements {
             margin: 1rem 0;
-            padding-left: 1.75rem;
+            padding-left: 3.4rem;
+            padding-right: 4rem;
         }
         
         .achievements li {
@@ -61,12 +78,18 @@
             line-height: 1.5;
         }
         
-        .reflection {
-            font-style: italic;
-            margin: 1.5rem 0;
-            padding: 1rem;
-            background: var(--bg-accent);
-            border-left: 4px solid var(--accent-color-light);
+        .reflection p {
+            font-size: 1.01rem;
+        }
+
+        .summary-internal p, .summary-external p {
+            /* font-family: 'Spectral', serif; */
+            font-weight: 200;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+            color: var(--text-color-bright);
+            padding-left: 1rem;
+            /* border-left: 4px solid var(--card-bg); */
         }
         
         .education-item {
@@ -75,12 +98,22 @@
         
         .education-description {
             margin: 1rem 0;
+            
+        }
+
+        .education-description p {
+            /* font-family: 'Spectral', serif; */
+            font-weight: 200;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+            color: var(--text-color-bright);
             padding-left: 1rem;
+            border-left: 4px solid var(--card-bg);
         }
 
         section ul {
             padding-left: 1.75rem;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
         }
 
         section ul li {
@@ -99,7 +132,7 @@
                 <h3>Systems Thinker | Strategic Problem Solver | Adaptive Leader</h3>
                 <p>📍 Portland, OR | jasdeep@metasphere.com | LinkedIn: linkedin.com/in/scalabl3</p>
             </div>
-
+            <br/>
             
             <section class="section">
                 <h2>Professional Summary (internal)</h2>
@@ -207,7 +240,8 @@
                     </ul>
                     
                     <div class="reflection">
-                        <p>EMC2 was an extraordinary test of taking leadership in uncertain times, requiring me to use every skill I had learned across my career while developing new capabilities. I had never run an entire organization, let alone coming in blindly without any transition period or handoff. My experience with so many stakeholders of all levels came in handy. These clients and roles were both completely different and a bit familiar. Yet again, I found even more in myself than I had known was there, and this time it had layers and layers of personal and professional consequences. I am quite proud that I, together with the team and my family, found a way through the challenges gracefully.</p>
+                        <p>EMC2 was an extraordinary test of taking leadership in uncertain times, requiring me to use every skill I had learned across my career while developing new capabilities. I had never run an entire organization, let alone coming in blindly without any transition period or handoff. My experience with so many stakeholders of all levels came in handy. 
+                            In this field, the clients and roles were <i>very</i> different than the tech indusry, but my experience with how to learn about stakeholder priorities was universal. Yet again, I found even more in myself than I had known was there, and this time it had layers and layers of personal and professional consequences. I am quite proud that I, together with the team and my family, found a way through the challenges gracefully.</p>
                     </div>
                 </div>
             </section>
