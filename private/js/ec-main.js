@@ -3,14 +3,14 @@ const navStructure = [
     // About section
     { type: 'header', text: 'About' },
     { type: 'group', items: [
-        { href: 'index.html', text: 'Interpretability: Do I Fit?' },
+        { href: 'ec-about-interpretability.html', text: 'Interpretability: Do I Fit?' },
         { href: 'ec-about-resume.html', text: 'Resume' }
     ]},
 
     // Research section
     { type: 'header', text: 'My Research' },
     { type: 'group', items: [
-        { href: 'ec-overview.html', text: 'Overview' },
+        { href: 'index.html', text: 'Overview' },
         { href: 'ec-research-saveas.html', text: 'AI.context.saveAs()' },
         { href: 'ec-research-terminology.html', text: 'Terminology' }
     ]},
@@ -67,7 +67,7 @@ function generateNavigation() {
     headerContainer.className = 'header-container';
 
     const logo = document.createElement('a');
-    logo.href = 'ec-overview.html';
+    logo.href = 'index.html';
     logo.className = 'nav-logo';
     logo.innerHTML = 'Humain<span class="accent">Labs.ai</span><br/><span class="author-name">Jasdeep Jaitla</span>';
     
