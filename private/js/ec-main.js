@@ -3,7 +3,6 @@ const navStructure = [
     // About section
     { type: 'header', text: 'About' },
     { type: 'group', items: [
-        { href: 'ec-about-interpretability.html', text: 'Interpretability: Do I Fit?' },
         { href: 'ec-about-resume.html', text: 'Resume' }
     ]},
 
@@ -49,10 +48,11 @@ const navStructure = [
         { href: 'ec-results-further-research.html', text: 'Further Research' }
     ]},
     
-    // Misc section (renamed from About)
+    // Misc section
     { type: 'divider' },
     { type: 'header', text: 'Misc' },
     { type: 'group', items: [
+        { href: 'ec-about-interpretability.html', text: 'Interpretability: Do I Fit?' },
         { href: 'ec-funfacts.html', text: 'Fun Facts' }
     ]}
 ];
