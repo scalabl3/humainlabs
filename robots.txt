@@ -1,2 +1,7 @@
 User-agent: *
-Disallow: / 
+Disallow: /admin/
+Disallow: /private/
+Disallow: /config/
+Allow: /
+
+Sitemap: https://humainlabs.ai/sitemap.xml
